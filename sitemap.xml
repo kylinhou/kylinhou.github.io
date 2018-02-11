@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://kylinhou.github.io/archive/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/about/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/posts/creating-a-new-theme/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/posts/goisforlovers/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/posts/test/</loc>
+    <lastmod>2018-01-14T23:54:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/tags/development/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/tags/go/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/tags/golang/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/tags/hugo/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/posts/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/tags/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/tags/templates/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/tags/theme/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kylinhou.github.io/tags/themes/</loc>
+    <lastmod>2018-01-14T23:21:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
