@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nload on Kylin Blog</title>
+    <link>https://kylinhou.github.io/tags/nload/</link>
+    <description>Recent content in Nload on Kylin Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Tue, 04 Oct 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kylinhou.github.io/tags/nload/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux下安装nload</title>
+      <link>https://kylinhou.github.io/posts/nload-linux%E5%AE%89%E8%A3%85nload/</link>
+      <pubDate>Tue, 04 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/nload-linux%E5%AE%89%E8%A3%85nload/</guid>
+      <description>&lt;h1 id=&#34;linux下安装nload&#34;&gt;linux下安装nload&lt;/h1&gt;
+
+&lt;h2 id=&#34;centos下安装nload监控网卡的流量情况&#34;&gt;centos下安装nload监控网卡的流量情况&lt;/h2&gt;
+
+&lt;h4 id=&#34;1-安装依赖包&#34;&gt;1、安装依赖包&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install -y gcc gcc-c++ ncurses-devel make wget
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

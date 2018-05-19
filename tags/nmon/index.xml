@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nmon on Kylin Blog</title>
+    <link>https://kylinhou.github.io/tags/nmon/</link>
+    <description>Recent content in Nmon on Kylin Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Thu, 23 Jun 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kylinhou.github.io/tags/nmon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>centos下安装nmon</title>
+      <link>https://kylinhou.github.io/posts/nmon-%E5%AE%89%E8%A3%85nmon/</link>
+      <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/nmon-%E5%AE%89%E8%A3%85nmon/</guid>
+      <description>&lt;h1 id=&#34;centos下安装nmon&#34;&gt;centos下安装nmon&lt;/h1&gt;
+
+&lt;h3 id=&#34;nmon的安装&#34;&gt;nmon的安装&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir /usr/local/nmon
+cd /usr/local/nmon
+wget http://sourceforge.net/projects/nmon/files/nmon_linux_14i.tar.gz
+tar zxvf nmon_linux_14i.tar.gz
+chmod 777 nmon_x86_64_sles11
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

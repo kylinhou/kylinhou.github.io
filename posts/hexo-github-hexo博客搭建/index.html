@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    github &#43; hexo 博客搭建 | Kylin Blog
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://kylinhou.github.io/posts/hexo-github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://kylinhou.github.io//css/index.css">
+  
+  <link href="https://kylinhou.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Kylin Blog" />
+  <link href="https://kylinhou.github.io/index.xml" rel="feed" type="application/rss+xml" title="Kylin Blog" />
+
+  
+  <link href="https://kylinhou.github.io//favicon.ico" rel="shortcut icon">
+
+  <script>
+    window.baseURL = 'https:\/\/kylinhou.github.io\/';
+  </script>
+</head>
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="https://kylinhou.github.io/"  class="brand-logo">
+            <i class="material-icons hide-on-med-and-down"> Ⓚ </i>
+            Kylin Blog
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//archive/" class=''>
+                归档
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//categories/" class=''>
+                分类
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//about/" class=''>
+                关于
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='https://kylinhou.github.io/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel">
+          
+          <div class='group'>
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">8</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/linux'> linux
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class='group'>
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">9</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/loadrunner'> loadrunner
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/linux'> linux
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/github'> github
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/markdown'> markdown
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB'> 软件分享
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/centos'> centos
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/java'> java
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nginx'> nginx
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nload'> nload
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nmon'> nmon
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/premiere'> premiere
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/rpc'> rpc
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/theme'> theme
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E4%B9%B1%E7%A0%81'> 乱码
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6'> 办公软件
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'> 博客搭建
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B'> 编程
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C'> 视频制作
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="https://kylinhou.github.io//" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//archive/" class=''>
+        归档
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//categories/" class=''>
+        分类
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//about/" class=''>
+        关于
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='https://kylinhou.github.io/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+  
+
+
+
+
+<main id="single" role="main" class="main-panel">
+  <div class="page-content">
+    <div class="container container-ex">
+      <div class="inner">
+        <section class="post-wrapper">
+          
+          <div class="toc-panel">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#git安装">git安装</a></li>
+<li><a href="#node-js安装">node.js安装</a></li>
+<li><a href="#安装hexo">安装Hexo</a></li>
+<li><a href="#开始github">开始Github</a></li>
+<li><a href="#使用github-pages建立博客">使用GitHub Pages建立博客</a>
+<ul>
+<li>
+<ul>
+<li><a href="#发表新文章">发表新文章</a></li>
+<li><a href="#删除文章">删除文章</a></li>
+<li><a href="#首页显示文章摘要">首页显示文章摘要</a></li>
+<li><a href="#添加独立域名">添加独立域名</a></li>
+<li><a href="#同时部署至github和coding">同时部署至github和Coding</a></li>
+<li><a href="#站内搜索">站内搜索</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+          <div class="post reveal ">
+            <div class="card">
+              <section class="breadcrumb-root">
+  <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+     
+
+    <a class="breadcrumb" href="https://kylinhou.github.io/">
+      首页</a>
+      
+    
+      
+    
+        
+    
+      
+    <span class="breadcrumb">github &#43; hexo 博客搭建</span>
+
+        
+    
+      
+  </div>
+</section>
+              
+              <div class="card-header postinfo">
+                <span class="card-title">github &#43; hexo 博客搭建 </span>
+              </div>
+              <div class="card-header date">
+                
+                <div class="group">
+                  <i class="material-icons">book</i>
+                  <address>
+                    归档：
+                    <a href="https://kylinhou.github.io//categories/%E5%8D%9A%E5%AE%A2">博客</a>&nbsp; 
+                  </address>
+                </div>
+                
+                <div class="group">
+                  <i class="material-icons">flag</i>
+                  <time>创建：2016年06月30日
+                  </time>
+                </div>
+                
+                
+
+              </div>
+              
+              <div class="card-content">
+
+                <article class="article">
+                  
+
+<h2 id="git安装">git安装</h2>
+
+<p>git的相关教程非常多，这里就不赘述了</p>
+
+<!-- more -->
+
+<h2 id="node-js安装">node.js安装</h2>
+
+<p>去官网下载 <a href="http://nodejs.org/download/">http://nodejs.org/download/</a> ，之后安装，我使用了默认安装路径</p>
+
+<h2 id="安装hexo">安装Hexo</h2>
+
+<p>在电脑的屏幕上右键（随便选择桌面上就行），选择Git Bash Here ，然后出现终端界面，输入npm install -g hexo
+回车之后等待，但是出错，报错如下</p>
+
+<blockquote>
+<p>npm WARN optional Skipping failed optional dependency /hexo/chokidar/fsevents:
+npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.0.12
+npm ERR! Windows_NT 10.0.10586
+npm ERR! argv &ldquo;C:\Program Files\nodejs\node.exe&rdquo; &ldquo;C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js&rdquo; &ldquo;install&rdquo; &ldquo;-g&rdquo; &ldquo;hexo&rdquo;
+npm ERR! node v6.2.2
+npm ERR! npm  v3.9.5
+npm ERR! shasum check failed for C:\Users\kylin\AppData\Local\Temp\npm-12620-bfae7f80\registry.npmjs.org\JSONStream-\JSONStream-1.1.3.tgz
+npm ERR! Expected: 1b296c7949b47e4fc22ac7958f76d2fbe2415493
+npm ERR! Actual:   46eb6043a766a9b5f25d516cd21373227d912302
+npm ERR! From:     <a href="https://registry.npmjs.org/JSONStream/-/JSONStream-1.1.3.tgz">https://registry.npmjs.org/JSONStream/-/JSONStream-1.1.3.tgz</a>
+npm ERR!
+npm ERR! If you need help, you may report this error at:
+npm ERR!     <a href="https://github.com/npm/npm/issues">https://github.com/npm/npm/issues</a>
+npm ERR! Please include the following file with any support request:
+npm ERR!     C:\Users\kylin\Desktop\npm-debug.log</p>
+</blockquote>
+
+<p>出错的原因不明白，尝试各种解决方法：</p>
+
+<ul>
+<li>将安装好的最新版卸载掉，重新下载了稳定版v4.4.4安装重试</li>
+<li>以管理员身份运行Git Bash，然后再输入npm install -g hexo，成功！！！</li>
+</ul>
+
+<p>创建一个文件夹，保存自己的hexo网站，在文件夹内右键，选择Git Bash Here ，输入</p>
+
+<pre><code>         hexo init
+         npm install
+</code></pre>
+
+<p>输入hexo server，出现下图的话表示hexo运行成功</p>
+
+<p>![hexo运行成功][1]</p>
+
+<p>浏览器访问 <a href="http://localhost:4000">http://localhost:4000</a> ，看一下会有什么效果</p>
+
+<h2 id="开始github">开始Github</h2>
+
+<ol>
+<li>github账号以前已经注册过，直接使用</li>
+<li>建立一个仓库，与用户名对应的仓库，仓库名必须为『your_user_name.github.io』</li>
+
+<li><p>将本地的ssh-key复制到github上</p>
+
+<pre><code>      ssh-keygen -t rsa -C &quot;你的github注册邮箱&quot;
+</code></pre>
+
+<p>然后一直回车，直到出现</p>
+
+<p>![enter description here][2]
+   查看电脑中以前的ssh-key，输入：
+  ​</p>
+
+<pre><code>   cd ~/.ssh/ &amp;&amp; ls
+</code></pre>
+
+<p>如果结果为： id_rsa  id_rsa.pub继续进行，输入：
+  ​</p>
+
+<pre><code>cat id_rsa.pub
+</code></pre>
+
+<p>将会显示出SSH-KEY，复制内容粘贴到github的ssh中</p></li>
+
+<li><p>在hexo目录中有一个  config.yml 文件, 在其最后补全如下信息：
+  deploy:
+  type: git
+  repo: <a href="https://github.com/yourname/yourname.github.io.git">https://github.com/yourname/yourname.github.io.git</a>
+   branch: master
+   执行</p>
+
+<pre><code>    hexo deploy
+</code></pre>
+
+<p>出错：</p>
+
+<blockquote>
+<p>ERROR Deployer not found: git</p>
+</blockquote>
+
+<p>找到解决方案：
+需要先安装hexo-deployer-git，然后将github修改为git</p>
+
+<pre><code>  npm install hexo-deployer-git --save
+</code></pre>
+
+<p>之后重新执行hexo deploy
+弹出一个对话框，输入github账户名和密码，完成之后，成功将本地的hexo文件上传到github</p></li>
+</ol>
+
+<p>在使用ssh连接github的时候一直不成功，输入ssh -T git@github.com显示：</p>
+
+<pre><code>      $ ssh -T git@github.com
+      The authenticity of host 'github.com (192.30.253.112)' can't be established.
+      RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+      Are you sure you want to continue connecting (yes/no)?
+      Host key verification failed.
+</code></pre>
+
+<p>尝试了很多次依然是不管用，发现这个问题有点白痴，要在Are you sure you want to continue connecting (yes/no)?这句话后面填上yes，回车才能成功！！！！</p>
+
+<h2 id="使用github-pages建立博客">使用GitHub Pages建立博客</h2>
+
+<p>在搜索hexo的相关资料的时候发现了next主题，所以首先使用next主题看一下效果，next的地址为 <a href="http://theme-next.iissnan.com/">http://theme-next.iissnan.com/</a>
+上面有详细的配置说明，可以把主题设置的更加适合自己。</p>
+
+<h4 id="发表新文章">发表新文章</h4>
+
+<ul>
+<li>hexo new &ldquo;文章标题&rdquo;（可以简写new为n）</li>
+<li>我喜欢直接在source_posts文件夹下新建一个.md文件，效果是一样的，或者把在其他地方写好的md文件直接拷贝过来</li>
+</ul>
+
+<p>然后继续 hexo g，hexo d，文章就部署好了</p>
+
+<h4 id="删除文章">删除文章</h4>
+
+<p>删除文章非常简单，直接把相应的.md文件在删除，然后执行hexo g，hexo d就OK了</p>
+
+<h4 id="首页显示文章摘要">首页显示文章摘要</h4>
+
+<p>在next主题使用说明中有说明，一共三种方法：</p>
+
+<ul>
+<li>在文章中使用 <!-- more --> 手动进行截断，Hexo 提供的方式 <strong>推荐</strong></li>
+<li>在文章的 front-matter 中添加 description，并提供文章摘录</li>
+
+<li><p>自动形成摘要，在 主题配置文件 中添加：</p>
+
+<p>auto_excerpt:</p>
+
+<pre><code>enable: true
+length: 150
+</code></pre>
+
+<p>默认截取的长度为 150 字符，可以根据需要自行设定</p></li>
+</ul>
+
+<p>建议使用 <!-- more -->（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。</p>
+
+<h4 id="添加独立域名">添加独立域名</h4>
+
+<p>很早之前就买了一个域名，kylin10.com,但是确一直没有用起来，之前的博客网站放在新浪云SAE上，域名没有备案无法绑定，SAE的费用也是越来越高，用完了云豆就来折腾github了。</p>
+
+<p>将github与自己的域名绑定只需下面几部：</p>
+
+<ol>
+<li>在Hexo的source目录下新建一个CNAME文件，里面写上自己的域名，注意前面不要加www等内容，直接写kylin10.com，完成之后deploy</li>
+<li>注册<a href="https://www.dnspod.cn">DNSpod</a>，添加域名,可以按照下图设置：
+<img src="http://cnfeat.qiniudn.com/15.png" alt="图片描述" />
+图片来自<a href="http://www.jianshu.com/p/05289a4bc8b2/">http://www.jianshu.com/p/05289a4bc8b2/</a></li>
+</ol>
+
+<p>3.在购买域名的管理中心修改域名对应的dns</p>
+
+<h4 id="同时部署至github和coding">同时部署至github和Coding</h4>
+
+<p>同时将博客部署到github跟coding上，可以参考这个教程 <a href="http://sanwen8.cn/p/1a0TJhT.html">http://sanwen8.cn/p/1a0TJhT.html</a></p>
+
+<p>但是有一点需要注意：</p>
+
+<p>在给coding上添加ssh的时候要选择个人公钥！！！，默认的是公开公钥，第一次我没有注意，添加之后git一直出错。</p>
+
+<h4 id="站内搜索">站内搜索</h4>
+
+<p>不知道为什么，站内搜索一直失败，还在努力中</p>
+
+                </article>
+
+              </div>
+              
+              <div class="card-action card-action-links">
+                
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA">博客搭建</a> 
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/github">github</a> 
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/hexo">hexo</a> 
+              </div>
+              
+              <div class="card-action">
+                  
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script>
+  window.VALINECONFIG = {
+    el: '#comment',
+    notify: false,
+    verify: false,
+    appId: '\x3c the appId \x3e',
+    appKey: '\x3c the appKey \x3e',
+    placeholder: '\x3c placeholder \x3e',
+    path: window.location.pathname,
+    avatar: 'retro'
+  }
+</script>  
+              </div>
+
+              
+              <div class="pagination-single">
+                 
+                <span class="pagination-item previous">
+                  <i class="material-icons">上一篇</i>
+                  <a href="https://kylinhou.github.io/posts/soft-pr%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/" rel="prev">pr软件分享</a>
+                </span>  
+                
+                
+                <span class="pagination-item next">
+				<i class="material-icons">下一篇</i>
+                  <a href="https://kylinhou.github.io/posts/nmon-%E5%AE%89%E8%A3%85nmon/" rel="next">centos下安装nmon</a>
+                </span> 
+              </div>
+              
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="wrapper">
+        <div class="group group-slink">
+          <h5>Kylin Blog</h5>
+          <p>Theme
+            <a href="https://github.com/stkevintan/canoe" target="_blank">canoe</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="group group-flink">
+          <h5>My Friends</h5>
+          <ul>
+            
+            <li>
+              <a href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+<script>
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.registerLanguage("graphql", function (e) { return { aliases: ["gql"], k: { keyword: "query mutation subscription|10 type interface union scalar fragment|10 enum on ...", literal: "true false null" }, c: [e.HCM, e.QSM, e.NM, { cN: "type", b: "[^\\w][A-Z][a-z]", e: "\\W", eE: !0 }, { cN: "literal", b: "[^\\w][A-Z][A-Z]", e: "\\W", eE: !0 }, { cN: "variable", b: "\\$", e: "\\W", eE: !0 }, { cN: "keyword", b: "[.]{2}", e: "\\." }, { cN: "meta", b: "@", e: "\\W", eE: !0 }], i: /([;<']|BEGIN)/ } });
+  hljs.initHighlightingOnLoad();
+  
+</script>
+
+
+<script type="text/javascript" src="https://kylinhou.github.io//js/polyfill.js"></script>
+<script type="text/javascript" src="https://kylinhou.github.io//js/index.js"></script>
+
+
+
+</body>
+
+</html>

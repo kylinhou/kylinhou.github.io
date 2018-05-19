@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Kylin Blog</title>
+    <link>https://kylinhou.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Kylin Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Tue, 04 Oct 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kylinhou.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux下安装nload</title>
+      <link>https://kylinhou.github.io/posts/nload-linux%E5%AE%89%E8%A3%85nload/</link>
+      <pubDate>Tue, 04 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/nload-linux%E5%AE%89%E8%A3%85nload/</guid>
+      <description>&lt;h1 id=&#34;linux下安装nload&#34;&gt;linux下安装nload&lt;/h1&gt;
+
+&lt;h2 id=&#34;centos下安装nload监控网卡的流量情况&#34;&gt;centos下安装nload监控网卡的流量情况&lt;/h2&gt;
+
+&lt;h4 id=&#34;1-安装依赖包&#34;&gt;1、安装依赖包&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install -y gcc gcc-c++ ncurses-devel make wget
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>linux下安装loadrunner负载组件</title>
+      <link>https://kylinhou.github.io/posts/loadrunner-linux%E4%B8%8B%E5%AE%89%E8%A3%85loadrunner%E8%B4%9F%E8%BD%BD%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Tue, 23 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/loadrunner-linux%E4%B8%8B%E5%AE%89%E8%A3%85loadrunner%E8%B4%9F%E8%BD%BD%E7%BB%84%E4%BB%B6/</guid>
+      <description>&lt;h1 id=&#34;linux下安装loadrunner负载组件&#34;&gt;linux下安装loadrunner负载组件&lt;/h1&gt;
+
+&lt;p&gt;有时候我们的windows压测机的性能不够，需要使用linux服务器充当负载机，下面说一下linux上安装loadrunner负载组件的整个过程。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>centos下安装nmon</title>
+      <link>https://kylinhou.github.io/posts/nmon-%E5%AE%89%E8%A3%85nmon/</link>
+      <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/nmon-%E5%AE%89%E8%A3%85nmon/</guid>
+      <description>&lt;h1 id=&#34;centos下安装nmon&#34;&gt;centos下安装nmon&lt;/h1&gt;
+
+&lt;h3 id=&#34;nmon的安装&#34;&gt;nmon的安装&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir /usr/local/nmon
+cd /usr/local/nmon
+wget http://sourceforge.net/projects/nmon/files/nmon_linux_14i.tar.gz
+tar zxvf nmon_linux_14i.tar.gz
+chmod 777 nmon_x86_64_sles11
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>查看rpc是否已开启</title>
+      <link>https://kylinhou.github.io/posts/rpc-%E6%9F%A5%E7%9C%8Brpc%E6%98%AF%E5%90%A6%E5%B7%B2%E5%BC%80%E5%90%AF/</link>
+      <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/rpc-%E6%9F%A5%E7%9C%8Brpc%E6%98%AF%E5%90%A6%E5%B7%B2%E5%BC%80%E5%90%AF/</guid>
+      <description>&lt;h1 id=&#34;查看rpc是否已开启&#34;&gt;查看rpc是否已开启&lt;/h1&gt;
+
+&lt;p&gt;在使用loadrunner进行性能测试的过程中，我们可以监控服务器的资源使用情况，那么需要服务器开启rpc功能。下面简单介绍一下开启rpc的方法。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

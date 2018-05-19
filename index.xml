@@ -31,33 +31,293 @@
     </item>
     
     <item>
+      <title>Category</title>
+      <link>https://kylinhou.github.io/category/</link>
+      <pubDate>Sat, 19 Aug 2017 20:09:28 +0800</pubDate>
+      
+      <guid>https://kylinhou.github.io/category/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typora推荐</title>
+      <link>https://kylinhou.github.io/posts/soft-typora%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/soft-typora%E6%8E%A8%E8%8D%90/</guid>
+      <description>&lt;h1 id=&#34;typora推荐&#34;&gt;Typora推荐&lt;/h1&gt;
+
+&lt;h3 id=&#34;typora是什么-可以吃吗&#34;&gt;Typora是什么，可以吃吗？&lt;/h3&gt;
+
+&lt;p&gt;最近一直在使用markdown写东西，但是windows平台上的各种编辑器都不是很满意，之前一直用的markdowneditor不知道怎么就是启动不了了，索性再找个更好的，于是乎就发现了typora。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>世界那么大我想去看</title>
+      <link>https://kylinhou.github.io/posts/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-%E4%B8%96%E7%95%8C%E9%82%A3%E4%B9%88%E5%A4%A7%E6%88%91%E6%83%B3%E5%8E%BB%E7%9C%8B%E7%9C%8B/</link>
+      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-%E4%B8%96%E7%95%8C%E9%82%A3%E4%B9%88%E5%A4%A7%E6%88%91%E6%83%B3%E5%8E%BB%E7%9C%8B%E7%9C%8B/</guid>
+      <description>&lt;p&gt;世界那么大，我想去看看。这里分享最新的hosts，以及还不错的免费梯子。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>走，我带你去看看</title>
+      <link>https://kylinhou.github.io/posts/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-%E8%B5%B0%E6%88%91%E5%B8%A6%E4%BD%A0%E5%8E%BB%E7%9C%8B%E7%9C%8B/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-%E8%B5%B0%E6%88%91%E5%B8%A6%E4%BD%A0%E5%8E%BB%E7%9C%8B%E7%9C%8B/</guid>
+      <description>&lt;h2 id=&#34;使用https访问-才是正确的姿势&#34;&gt;使用https访问，才是正确的姿势&lt;/h2&gt;
+
+&lt;p&gt;很多人替换完host之后发现还是上不了谷歌，很多网页打不开，原因不是host不好使，而是没有使用https的方式。你可以手动在浏览器地址上把http改成https，但是太费劲了，下面教你设置一下浏览器，让应该使用https的网站直接使用https：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>linux下安装nload</title>
+      <link>https://kylinhou.github.io/posts/nload-linux%E5%AE%89%E8%A3%85nload/</link>
+      <pubDate>Tue, 04 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/nload-linux%E5%AE%89%E8%A3%85nload/</guid>
+      <description>&lt;h1 id=&#34;linux下安装nload&#34;&gt;linux下安装nload&lt;/h1&gt;
+
+&lt;h2 id=&#34;centos下安装nload监控网卡的流量情况&#34;&gt;centos下安装nload监控网卡的流量情况&lt;/h2&gt;
+
+&lt;h4 id=&#34;1-安装依赖包&#34;&gt;1、安装依赖包&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install -y gcc gcc-c++ ncurses-devel make wget
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>运行java_vuser时添加负载机运行失败</title>
+      <link>https://kylinhou.github.io/posts/loadrunner-%E8%BF%90%E8%A1%8Cjava_vuser%E8%B4%9F%E8%BD%BD%E6%9C%BA%E8%BF%90%E8%A1%8C%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 28 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/loadrunner-%E8%BF%90%E8%A1%8Cjava_vuser%E8%B4%9F%E8%BD%BD%E6%9C%BA%E8%BF%90%E8%A1%8C%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;h1 id=&#34;运行java-vuser时添加负载机运行失败&#34;&gt;运行java vuser时添加负载机运行失败&lt;/h1&gt;
+
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
+
+&lt;p&gt;这次测试的接口是调用rpc，tps到2、3万，场景中已经添加了7台负载机，但是负载机的cpu使用仍然达到100%，负载机的性能已经影响到本次测试了，所以想多添加几台负载机。奇怪的是新添加的几台负载机运行场景之后，vuser直接是failed状态，不能正常运行，脚本中引用到的jar文件已经放到了相应的位置，但是就是不行。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mybase分享</title>
+      <link>https://kylinhou.github.io/posts/soft-mybase%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Tue, 27 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/soft-mybase%E5%88%86%E4%BA%AB/</guid>
+      <description>&lt;h3 id=&#34;官方介绍&#34;&gt;官方介绍&lt;/h3&gt;
+
+&lt;p&gt;为了更好的一本正经的胡说八道，专门去看了一下专业的说明：&lt;/p&gt;
+
+&lt;p&gt;myBase 是一款用于分类存储管理任意格式资料的小型个人数据库软件， 有助于个人用户在( Linux/MacOSX/Windows )桌面电脑系统上实施文档、知识、笔记、日记、图片和网页的分类存储和管理。 借助软件提供的各项功能，创建和维护一个专属于自己的个人知识库将变的相对简单快捷。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>loadrunner返回信息乱码解决方案</title>
+      <link>https://kylinhou.github.io/posts/loadrunner-%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Tue, 13 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/loadrunner-%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>&lt;h1 id=&#34;loadrunner返回信息乱码解决方案&#34;&gt;loadrunner返回信息乱码解决方案&lt;/h1&gt;
+
+&lt;h2 id=&#34;问题描述&#34;&gt;问题描述&lt;/h2&gt;
+
+&lt;p&gt;loadrunner是一个很强大的工具，但是对于中文的支持并不友好，从服务器返回的信息如果包含中文，显示将会是乱码。&lt;/p&gt;
+
+&lt;p&gt;本教程可以轻松查看乱码信息，使信息更直观。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Loadrunner参数化使用mysql数据源</title>
+      <link>https://kylinhou.github.io/posts/loadrunner-loadrunner%E5%8F%82%E6%95%B0%E5%8C%96%E4%BD%BF%E7%94%A8mysql%E6%95%B0%E6%8D%AE%E6%BA%90/</link>
+      <pubDate>Fri, 02 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/loadrunner-loadrunner%E5%8F%82%E6%95%B0%E5%8C%96%E4%BD%BF%E7%94%A8mysql%E6%95%B0%E6%8D%AE%E6%BA%90/</guid>
+      <description>&lt;h1 id=&#34;loadrunner-参数化使用mysql数据源&#34;&gt;Loadrunner 参数化使用mysql数据源&lt;/h1&gt;
+
+&lt;h2 id=&#34;问题概述&#34;&gt;问题概述&lt;/h2&gt;
+
+&lt;p&gt;在使用loadrunner进行性能测试的过程中，参数化是非常重要的一个操作，有时候我们参数化的数据需要跟数据库中的数据一致才能有效的完成测试。我们可以选择将数据库中的对应字段的数据导出到文件，然后把数据copy到脚本文件中，但是还有更简单的方法，我们可以直接使用loadrunner连接我们的数据库，将对应字段的数据取出直接保存到参数化脚本文件中。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>loadrunner利用代理模式录制手机脚本</title>
+      <link>https://kylinhou.github.io/posts/loadrunner-loadrunner%E5%88%A9%E7%94%A8%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E5%BD%95%E5%88%B6%E6%89%8B%E6%9C%BA%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Fri, 26 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/loadrunner-loadrunner%E5%88%A9%E7%94%A8%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E5%BD%95%E5%88%B6%E6%89%8B%E6%9C%BA%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;h1 id=&#34;loadrunner利用代理模式录制手机脚本&#34;&gt;loadrunner利用代理模式录制手机脚本&lt;/h1&gt;
+
+&lt;p&gt;loadrunner12有手机版，可以直接在手机上录制脚本，但是需要root手机&lt;/p&gt;
+
+&lt;p&gt;loadrunner11和loadrunner12电脑版也是可以录制手机脚本的，设置一下代理就可以。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nginx安装配置</title>
+      <link>https://kylinhou.github.io/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 24 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;h1 id=&#34;centos下nginx安装配置&#34;&gt;centos下nginx安装配置&lt;/h1&gt;
+
+&lt;h3 id=&#34;安装安装编译工具及库文件&#34;&gt;安装安装编译工具及库文件&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>linux下安装loadrunner负载组件</title>
+      <link>https://kylinhou.github.io/posts/loadrunner-linux%E4%B8%8B%E5%AE%89%E8%A3%85loadrunner%E8%B4%9F%E8%BD%BD%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Tue, 23 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/loadrunner-linux%E4%B8%8B%E5%AE%89%E8%A3%85loadrunner%E8%B4%9F%E8%BD%BD%E7%BB%84%E4%BB%B6/</guid>
+      <description>&lt;h1 id=&#34;linux下安装loadrunner负载组件&#34;&gt;linux下安装loadrunner负载组件&lt;/h1&gt;
+
+&lt;p&gt;有时候我们的windows压测机的性能不够，需要使用linux服务器充当负载机，下面说一下linux上安装loadrunner负载组件的整个过程。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>java的学习心得</title>
+      <link>https://kylinhou.github.io/posts/java-java%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Sat, 23 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/java-java%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</guid>
+      <description>&lt;h1 id=&#34;java的学习心得&#34;&gt;java的学习心得&lt;/h1&gt;
+
+&lt;p&gt;现在来让我写一篇这样的文章真的感觉压力好大，但是之前已经答应过小学妹抽时间写一个东西，顺便分享一下我的资料。压力真的好大，害怕会误人子弟。所有的这些都是我个人的成长历程，自己的一些心得，仅作参考。希望对你有所帮助。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>pr软件分享</title>
+      <link>https://kylinhou.github.io/posts/soft-pr%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Sat, 23 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/soft-pr%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/</guid>
+      <description>&lt;h1 id=&#34;pr软件分享&#34;&gt;pr软件分享&lt;/h1&gt;
+
+&lt;p&gt;入职培训终于结束了，明天开始就正式进入部门了，今天晚上好好的整理一下前一段时间的各种事情~&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>github &#43; hexo 博客搭建</title>
+      <link>https://kylinhou.github.io/posts/hexo-github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 30 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/hexo-github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+      <description>git安装 git的相关教程非常多，这里就不赘述了 node.js安装 去官网下载 http://nodejs.org/download/ ，之后安装，我使用了默认安装路径 安装Hexo 在电脑的屏幕上右键</description>
+    </item>
+    
+    <item>
+      <title>centos下安装nmon</title>
+      <link>https://kylinhou.github.io/posts/nmon-%E5%AE%89%E8%A3%85nmon/</link>
+      <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/nmon-%E5%AE%89%E8%A3%85nmon/</guid>
+      <description>&lt;h1 id=&#34;centos下安装nmon&#34;&gt;centos下安装nmon&lt;/h1&gt;
+
+&lt;h3 id=&#34;nmon的安装&#34;&gt;nmon的安装&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir /usr/local/nmon
+cd /usr/local/nmon
+wget http://sourceforge.net/projects/nmon/files/nmon_linux_14i.tar.gz
+tar zxvf nmon_linux_14i.tar.gz
+chmod 777 nmon_x86_64_sles11
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>loadrunner学习</title>
+      <link>https://kylinhou.github.io/posts/loadrunner-loadrunner%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/loadrunner-loadrunner%E5%AD%A6%E4%B9%A0/</guid>
+      <description>&lt;h1 id=&#34;loadrunner学习&#34;&gt;loadrunner学习&lt;/h1&gt;
+
+&lt;h2 id=&#34;loadrunner介绍&#34;&gt;loadrunner介绍&lt;/h2&gt;
+
+&lt;p&gt;**LoadRunner **是 HP Mercury Interactive用来测试应用程序性能的工具&lt;/p&gt;
+
+&lt;p&gt;LoadRunner 通过模拟一个多用户并行工作的环境来对应用程序进行负载测试。通过使用最少的硬件资源，这些虚拟用户提供一致的、可重复并可度量的负载，像实际用户一样使用所要测试的应用程序。LoadRunner 深入的报告和图提供了评估应用程序性能所需的信息。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>将整个hexo博客系统原始文件上传到github</title>
+      <link>https://kylinhou.github.io/posts/hexo-%E5%B0%86%E6%95%B4%E4%B8%AAhexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%8A%E4%BC%A0%E5%88%B0github/</link>
+      <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/hexo-%E5%B0%86%E6%95%B4%E4%B8%AAhexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%8A%E4%BC%A0%E5%88%B0github/</guid>
+      <description>&lt;h2 id=&#34;这是个引子&#34;&gt;这是个引子&lt;/h2&gt;
+
+&lt;p&gt;将博客弄得基本差不多了之后忽然发现一个问题，使用hexo deploy命令部署在github上的博客仅仅是hexo系统将执行hexo g之后把md文件转换为静态html之后的文件，（这句话怎么说的这么长~） 那如果某一天电脑崩了，或者是文件丢失了，我们只能从github上弄回这些html文件，我们的这个hexo博客系统是找不回的，菊花一紧！
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>开启markdown之旅</title>
+      <link>https://kylinhou.github.io/posts/markdown-%E5%BC%80%E5%90%AFmarkdown%E4%B9%8B%E6%97%85/</link>
+      <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/markdown-%E5%BC%80%E5%90%AFmarkdown%E4%B9%8B%E6%97%85/</guid>
+      <description>&lt;h2 id=&#34;markdown编辑器&#34;&gt;markdown编辑器&lt;/h2&gt;
+
+&lt;p&gt;所话说欲先攻其器，必先利其器，为了能更好的快速进行markdown的使用和写作，匆匆看完markdown的基本语法之后就开始搜罗windows平台的编辑器，Linux我还是吃不消啊，真是惭愧。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>查看rpc是否已开启</title>
+      <link>https://kylinhou.github.io/posts/rpc-%E6%9F%A5%E7%9C%8Brpc%E6%98%AF%E5%90%A6%E5%B7%B2%E5%BC%80%E5%90%AF/</link>
+      <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/rpc-%E6%9F%A5%E7%9C%8Brpc%E6%98%AF%E5%90%A6%E5%B7%B2%E5%BC%80%E5%90%AF/</guid>
+      <description>&lt;h1 id=&#34;查看rpc是否已开启&#34;&gt;查看rpc是否已开启&lt;/h1&gt;
+
+&lt;p&gt;在使用loadrunner进行性能测试的过程中，我们可以监控服务器的资源使用情况，那么需要服务器开启rpc功能。下面简单介绍一下开启rpc的方法。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Creating a New Theme</title>
-      <link>https://kylinhou.github.io/posts/creating-a-new-theme/</link>
+      <link>https://kylinhou.github.io/posts/hugo-creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/creating-a-new-theme/</guid>
+      <guid>https://kylinhou.github.io/posts/hugo-creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://kylinhou.github.io/posts/goisforlovers/</link>
-      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kylinhou.github.io/posts/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://kylinhou.github.io/posts/test/</link>
-      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kylinhou.github.io/posts/test/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
     </item>
     
   </channel>

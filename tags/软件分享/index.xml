@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>软件分享 on Kylin Blog</title>
+    <link>https://kylinhou.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/</link>
+    <description>Recent content in 软件分享 on Kylin Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Fri, 23 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kylinhou.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Typora推荐</title>
+      <link>https://kylinhou.github.io/posts/soft-typora%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/soft-typora%E6%8E%A8%E8%8D%90/</guid>
+      <description>&lt;h1 id=&#34;typora推荐&#34;&gt;Typora推荐&lt;/h1&gt;
+
+&lt;h3 id=&#34;typora是什么-可以吃吗&#34;&gt;Typora是什么，可以吃吗？&lt;/h3&gt;
+
+&lt;p&gt;最近一直在使用markdown写东西，但是windows平台上的各种编辑器都不是很满意，之前一直用的markdowneditor不知道怎么就是启动不了了，索性再找个更好的，于是乎就发现了typora。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>pr软件分享</title>
+      <link>https://kylinhou.github.io/posts/soft-pr%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Sat, 23 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/soft-pr%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/</guid>
+      <description>&lt;h1 id=&#34;pr软件分享&#34;&gt;pr软件分享&lt;/h1&gt;
+
+&lt;p&gt;入职培训终于结束了，明天开始就正式进入部门了，今天晚上好好的整理一下前一段时间的各种事情~&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
