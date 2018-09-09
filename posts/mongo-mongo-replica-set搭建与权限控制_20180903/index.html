@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    mongo Replica Set搭建与权限控制 | Kylin Blog
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://kylinhou.github.io/posts/mongo-mongo-replica-set%E6%90%AD%E5%BB%BA%E4%B8%8E%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6_20180903/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://kylinhou.github.io//css/index.css">
+  
+  <link href="https://kylinhou.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Kylin Blog" />
+  <link href="https://kylinhou.github.io/index.xml" rel="feed" type="application/rss+xml" title="Kylin Blog" />
+
+  
+  <link href="https://kylinhou.github.io//favicon.ico" rel="shortcut icon">
+
+  <script>
+    window.baseURL = 'https:\/\/kylinhou.github.io\/';
+  </script>
+</head>
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="https://kylinhou.github.io/"  class="brand-logo">
+            <i class="material-icons hide-on-med-and-down"> Ⓚ </i>
+            Kylin Blog
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//archive/" class=''>
+                归档
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//categories/" class=''>
+                分类
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//about/" class=''>
+                关于
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='https://kylinhou.github.io/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel">
+          
+          <div class='group'>
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">9</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/redis'> redis
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/linux'> linux
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class='group'>
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">12</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'> redis
+                  <span class="badge">7</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/loadrunner'> loadrunner
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B'> 编程
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/linux'> linux
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/github'> github
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/java'> java
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/markdown'> markdown
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB'> 软件分享
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/centos'> centos
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hessian'> hessian
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nginx'> nginx
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/ngrinder'> ngrinder
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nload'> nload
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nmon'> nmon
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/premiere'> premiere
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/rpc'> rpc
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/theme'> theme
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E4%B9%B1%E7%A0%81'> 乱码
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6'> 办公软件
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'> 博客搭建
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%B7%A5%E5%85%B7'> 工具
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C'> 视频制作
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E9%80%A0%E6%95%B0%E6%8D%AE'> 造数据
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="https://kylinhou.github.io//" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//archive/" class=''>
+        归档
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//categories/" class=''>
+        分类
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//about/" class=''>
+        关于
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='https://kylinhou.github.io/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+  
+
+
+
+
+<main id="single" role="main" class="main-panel">
+  <div class="page-content">
+    <div class="container container-ex">
+      <div class="inner">
+        <section class="post-wrapper">
+          
+          <div class="toc-panel">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#mongo-replica-set搭建与权限控制">mongo Replica Set搭建与权限控制</a>
+<ul>
+<li><a href="#mongo集群说明">mongo集群说明</a></li>
+<li><a href="#mongo下载">mongo下载</a></li>
+<li><a href="#单节点安装与配置">单节点安装与配置</a></li>
+<li><a href="#mongo-replica-set-搭建">mongo <strong>Replica Set</strong>搭建</a>
+<ul>
+<li><a href="#1-创建一个目录保存我们mongo集群的信息">1.创建一个目录保存我们mongo集群的信息</a></li>
+<li><a href="#2-创建3个目录-分别来保存日志-数据-keyfile">2.创建3个目录，分别来保存日志、数据、keyfile</a></li>
+<li><a href="#3-创建一个-mongodb-conf-文件">3.创建一个 mongodb.conf 文件</a></li>
+<li><a href="#4-启动各个节点">4.启动各个节点</a></li>
+<li><a href="#5-创建副本集">5.创建副本集</a></li>
+<li><a href="#6-初始化副本集">6.初始化副本集</a></li>
+<li><a href="#7-添加超级用户">7.添加超级用户</a></li>
+</ul></li>
+<li><a href="#权限管理配置">权限管理配置</a>
+<ul>
+<li><a href="#关闭各服务器">关闭各服务器</a></li>
+<li><a href="#生成keyfile">生成keyfile</a></li>
+<li><a href="#复制keyfile到另外两台服务器">复制keyfile到另外两台服务器</a></li>
+<li><a href="#修改keyfile权限">修改keyfile权限</a></li>
+<li><a href="#修改配置文件">修改配置文件</a></li>
+<li><a href="#重启各服务器">重启各服务器</a></li>
+<li><a href="#登录并创建用户">登录并创建用户</a></li>
+</ul></li>
+<li><a href="#关于配置文件">关于配置文件</a>
+<ul>
+<li>
+<ul>
+<li><a href="#一份配置文件">一份配置文件：</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#用户权限说明">用户权限说明</a></li>
+<li><a href="#遇到的问题">遇到的问题</a>
+<ul>
+<li><a href="#无主节点">无主节点</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+          <div class="post reveal ">
+            <div class="card">
+              <section class="breadcrumb-root">
+  <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+     
+
+    <a class="breadcrumb" href="https://kylinhou.github.io/">
+      首页</a>
+      
+    
+      
+    
+        
+    
+      
+    <span class="breadcrumb">mongo Replica Set搭建与权限控制</span>
+
+        
+    
+      
+  </div>
+</section>
+              
+              <div class="card-header postinfo">
+                <span class="card-title">mongo Replica Set搭建与权限控制 </span>
+              </div>
+              <div class="card-header date">
+                
+                <div class="group">
+                  <i class="material-icons">book</i>
+                  <address>
+                    归档：
+                    <a href="https://kylinhou.github.io//categories/mongo">mongo</a>&nbsp; 
+                  </address>
+                </div>
+                
+                <div class="group">
+                  <i class="material-icons">flag</i>
+                  <time>创建：2018年07月23日
+                  </time>
+                </div>
+                
+                
+
+              </div>
+              
+              <div class="card-content">
+
+                <article class="article">
+                  
+
+<h1 id="mongo-replica-set搭建与权限控制">mongo Replica Set搭建与权限控制</h1>
+
+<h2 id="mongo集群说明">mongo集群说明</h2>
+
+<p>mongodb的集群搭建方式主要有三种，主从模式，Replica set模式，sharding模式, 三种模式各有优劣，适用于不同的场合，属Replica set应用最为广泛，主从模式现在用的较少，sharding模式最为完备，但配置维护较为复杂。这里主要介绍Replica Set模式的搭建方法。</p>
+
+<p>使用mongo版本：3.2.9</p>
+
+<h2 id="mongo下载">mongo下载</h2>
+
+<p>以3.2.9版本为例：</p>
+
+<p>wget &ndash;no-check-certificate  <a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.2.9.tgz">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon-3.2.9.tgz</a></p>
+
+<h2 id="单节点安装与配置">单节点安装与配置</h2>
+
+<p>将下载的文件解压到mongo的安装路径</p>
+
+<p>本文的mongo安装路径：/home/mongo/mongodb-linux-x86_64-amazon-3.2.9</p>
+
+<p>tar vzxf mongodb-linux-x86_64-amazon-3.2.9.tgz</p>
+
+<p>把mongo添加到环境变量里面：</p>
+
+<p>vi /etc/profile.d/mongodb.sh</p>
+
+<p>文件内容：</p>
+
+<pre><code>export MONGO_HOME=/home/mongo/mongodb-linux-x86_64-amazon-3.2.9
+export PATH=$PATH:$MONGO_HOME/bin
+</code></pre>
+
+<p>然后  source /etc/profile.d/mongodb.sh</p>
+
+<p>检验环境变量是否生效：</p>
+
+<p>mongod &ndash;version</p>
+
+<h2 id="mongo-replica-set-搭建">mongo <strong>Replica Set</strong>搭建</h2>
+
+<p>搭建一个 Replica Set mongo集群，使用3台服务器</p>
+
+<p>172.25.34.4</p>
+
+<p>172.25.34.5</p>
+
+<p>172.25.34.6</p>
+
+<p>端口号统一使用27011</p>
+
+<p>在三台服务器上按照上一步的说明安装完mongo，分别在三台服务器上进行如下操作：</p>
+
+<h3 id="1-创建一个目录保存我们mongo集群的信息">1.创建一个目录保存我们mongo集群的信息</h3>
+
+<blockquote>
+<p>mkdir appstore-mongo-27011</p>
+</blockquote>
+
+<p>集群的根目录就是：/home/mongo/appstore-mongo-27011</p>
+
+<blockquote>
+<p>cd appstore-mongo-27011</p>
+</blockquote>
+
+<h3 id="2-创建3个目录-分别来保存日志-数据-keyfile">2.创建3个目录，分别来保存日志、数据、keyfile</h3>
+
+<blockquote>
+<p>mkdir log db keyfile</p>
+</blockquote>
+
+<h3 id="3-创建一个-mongodb-conf-文件">3.创建一个 mongodb.conf 文件</h3>
+
+<p>创建一个 mongodb.conf 文件作为我们集群的配置文件</p>
+
+<blockquote>
+<p>vim mongodb.conf</p>
+
+<p>dbpath=/home/mongo/appstore-mongo-27011/db
+logpath=/home/mongo/appstore-mongo-27011/log/mongod.log
+pidfilepath=/home/mongo/appstore-mongo-27011/mongo.pid
+directoryperdb=true
+logappend=true</p>
+
+<p>replSet=appstoremongo</p>
+
+<p>bind_ip=172.25.34.5
+port=27011
+oplogSize=10000
+fork=true
+noprealloc=true
+storageEngine=wiredTiger</p>
+</blockquote>
+
+<p>注意：</p>
+
+<ul>
+<li><p>replSet：指定一个副本集名称作为参数，所有主机都必须有相同的名称作为同一个副本集。&ndash; 集群配置项</p></li>
+
+<li><p>注意修改ip、端口号、路径</p></li>
+
+<li><p>logpath必须具体到文件，如果只是到文件夹，mongo将无法启动</p></li>
+</ul>
+
+<p>这一步结束之后，集群根目录下的文件结构如下：</p>
+
+<blockquote>
+<p>[mongo@localhost appstore-mongo-27011]$ pwd
+/home/mongo/appstore-mongo-27011
+[mongo@localhost appstore-mongo-27011]$ ll
+total 20
+drwxrwxr-x 7 mongo mongo 4096 Mar  3 16:12 db
+drwxrwxr-x 2 mongo mongo 4096 Mar  3 16:07 keyfile
+drwxrwxr-x 2 mongo mongo 4096 Mar  3 15:58 log
+-rw-rw-r&ndash; 1 mongo mongo  431 Mar  3 16:08 mongodb.conf
+-rw-rw-r&ndash; 1 mongo mongo    7 Mar  3 16:08 mongo.pid</p>
+</blockquote>
+
+<h3 id="4-启动各个节点">4.启动各个节点</h3>
+
+<p>mongod -f /home/mongo/appstore-mongo-27011/mongodb.conf</p>
+
+<p>注：如果未将mongo添加到环境变量无法直接使用mongod</p>
+
+<h3 id="5-创建副本集">5.创建副本集</h3>
+
+<p>登陆mongo</p>
+
+<blockquote>
+<p>mongo 172.25.34.4:27011</p>
+</blockquote>
+
+<p>切换到admin</p>
+
+<blockquote>
+<p>use admin</p>
+</blockquote>
+
+<p>提交副本集信息</p>
+
+<pre><code class="language-shell">cfg={ _id:&quot;appstoremongo&quot;, members:[ {_id:0,host:'172.25.34.4:27011',priority:2}, {_id:1,host:'172.25.34.5:27011',priority:1}, {_id:2,host:'172.25.34.6:27011',arbiterOnly:true}] }; 
+</code></pre>
+
+<p>注：_id:&ldquo;appstoremongo&rdquo; 必须与配置文件中副本集名称一致</p>
+
+<p>priority表示优先级别，数值越大，表示是主节点</p>
+
+<p>arbiterOnly:true表示仲裁节点</p>
+
+<h3 id="6-初始化副本集">6.初始化副本集</h3>
+
+<blockquote>
+<p>rs.initiate(cfg)</p>
+</blockquote>
+
+<p>执行成功后，出现如下信息</p>
+
+<p>​   { &ldquo;ok&rdquo; : 1 }</p>
+
+<p>可以执行rs.status()来检查执行配置结果信息</p>
+
+<h3 id="7-添加超级用户">7.添加超级用户</h3>
+
+<p>登录到服务器的admin库</p>
+
+<blockquote>
+<p>use admin</p>
+</blockquote>
+
+<p>创建超级用户</p>
+
+<pre><code class="language-shell">&gt; \&gt;db.createUser({user: &quot;root&quot;,pwd: &quot;root&quot;,roles: [ { role: &quot;root&quot;, db:&quot;admin&quot; }]})
+</code></pre>
+
+<p>后面修改配置文件后，需要用这个超级用户来登录并创建数据库及用户名和密码，否则无法登录新建用户等操作。</p>
+
+<p>所以一定要在开启权限认证之前创建超级用户</p>
+
+<h2 id="权限管理配置">权限管理配置</h2>
+
+<p>在开启权限认证之前，一定要完成超级用户的创建！</p>
+
+<h3 id="关闭各服务器">关闭各服务器</h3>
+
+<pre><code class="language-shell">mongod --shutdown  -f ./mongodb.conf
+</code></pre>
+
+<h3 id="生成keyfile">生成keyfile</h3>
+
+<pre><code class="language-shell">openssl rand -base64 741 &gt; /home/mongo/appstore-mongo-27011/keyfile/mongodb-keyfile
+</code></pre>
+
+<h3 id="复制keyfile到另外两台服务器">复制keyfile到另外两台服务器</h3>
+
+<blockquote>
+<p>scp ./mongodb-keyfile user@ip:path</p>
+</blockquote>
+
+<h3 id="修改keyfile权限">修改keyfile权限</h3>
+
+<pre><code class="language-shell">chmod 600 ./mongodb-keyfile
+</code></pre>
+
+<p>注：一定要600</p>
+
+<h3 id="修改配置文件">修改配置文件</h3>
+
+<p>配置文件中添加如下两项：</p>
+
+<blockquote>
+<p>auth=true
+keyFile=/home/mongo/appstore-mongo-27011/keyfile/mongodb-keyfile</p>
+</blockquote>
+
+<pre><code>&gt; auth=true
+&gt; keyFile=/home/mongo/appstore-mongo-27011/keyfile/mongodb-keyfile
+</code></pre>
+
+<h3 id="重启各服务器">重启各服务器</h3>
+
+<blockquote>
+<p>mongod -f ./mongodb.conf</p>
+</blockquote>
+
+<h3 id="登录并创建用户">登录并创建用户</h3>
+
+<p>先用root用户登陆admin</p>
+
+<pre><code class="language-sh">use admin
+</code></pre>
+
+<pre><code class="language-sh">db.auth(&quot;root&quot;,&quot;root&quot;)
+</code></pre>
+
+<p>mongod的用户权限是跟着数据库走的，所以在创建之前先进入对应的db</p>
+
+<p>下面的命令相当于创建数据库，并设置角色与权限</p>
+
+<blockquote>
+<p>use appstore</p>
+</blockquote>
+
+<p>创建appstore用户，拥有appstore db的读写权限</p>
+
+<pre><code class="language-shell">db.createUser({user:'appstore',pwd:'appstore',roles:[{role:'readWrite',db:'appstore'}]})
+</code></pre>
+
+<p>ok了，到此结束。可以使用客户端登陆验证。</p>
+
+<h2 id="关于配置文件">关于配置文件</h2>
+
+<p>详细请参考官方文档：</p>
+
+<p><a href="http://docs.mongoing.com/manual-zh/reference/configuration-options.html">http://docs.mongoing.com/manual-zh/reference/configuration-options.html</a></p>
+
+<ul>
+<li>dbpath=/opt/data/mongo/<br /></li>
+</ul>
+
+<p>数据存放目录</p>
+
+<ul>
+<li>logpath=/opt/data/mongo/log/mongo.log<br /></li>
+</ul>
+
+<p>日志路径，注意路径到文件，否则启动不成功</p>
+
+<ul>
+<li>pidfilepath=/opt/data/mongo/mongo.pid</li>
+</ul>
+
+<p>进程ID，没有指定则启动时候就没有PID文件。默认缺省。</p>
+
+<ul>
+<li>directoryperdb=true</li>
+</ul>
+
+<p>设置为true，修改数据目录存储模式，每个数据库的文件存储在DBPATH指定目录的不同的文件夹中。使用此选项，可以配置的MongoDB将数据存储在不同的磁盘设备上，以提高写入吞吐量或磁盘容量。默认为false。</p>
+
+<p>在一开始就要确定好该参数值，因为中途修改改参数值，会因为数据目录的改变导致数据可能不可用，注意！</p>
+
+<ul>
+<li>logappend=true</li>
+</ul>
+
+<p>写日志的模式：设置为true为追加。默认是覆盖。如果未指定此设置，启动时MongoDB的将覆盖现有的日志文件。</p>
+
+<ul>
+<li>bind_ip=192.168.2.237</li>
+</ul>
+
+<p>绑定地址。默认127.0.0.1，只能通过本地连接。进程绑定和监听来自这个地址上的应用连接。要是需要给其他服务器连接，则需要注释掉这个或则把IP改成本机地址，如192.168.200.201[其他服务器用 mongo&ndash;host=192.168.200.201 连接] ，可以用一个逗号分隔的列表绑定多个IP地址。</p>
+
+<ul>
+<li>port=10000</li>
+</ul>
+
+<p>默认27017，MongoDB的默认服务TCP端口，监听客户端连接。要是端口设置小于1024，比如1021，则需要root权限启动。</p>
+
+<ul>
+<li>storageEngine=wiredTiger</li>
+</ul>
+
+<p>存储引擎类型，mongodb 3.0之后支持“mmapv1”、“wiredTiger”两种引擎，默认值为“mmapv1”；官方宣称wiredTiger引擎更加优秀。</p>
+
+<ul>
+<li>noprealloc=true</li>
+</ul>
+
+<p>默认false：使用预分配方式来保证写入性能的稳定，预分配在后台进行，并且每个预分配的文件都用0进行填充。这会让MongoDB始终保持额外的空间和空余的数据文件，从而避免了数据增长过快而带来的分配磁盘空间引起的阻塞。
+  设置noprealloc= true来禁用预分配的数据文件，会缩短启动时间，但在正常操作过程中，可能会导致性能显著下降。</p>
+
+<ul>
+<li>oplogSize=10000</li>
+</ul>
+
+<p>指定的复制操作日志（OPLOG）的最大大小。mongod创建一个OPLOG的大小基于最大可用空间量。对于64位系统，OPLOG通常是5％的可用磁盘空间。一旦mongod第一次创建OPLOG，改变oplogSize将不会影响OPLOG的大小。</p>
+
+<ul>
+<li>fork=true</li>
+</ul>
+
+<p>是否后台运行，设置为true 启动 进程在后台运行的守护进程模式。默认false。</p>
+
+<ul>
+<li>auth=true</li>
+</ul>
+
+<p>用户认证，默认false。不需要认证。当设置为true时候，进入数据库需要auth验证，当数据库里没有用户，则不需要验证也可以操作。直到创建了第一个用户，之后操作都需要验证。</p>
+
+<ul>
+<li>keyFile=/opt/data/mongo/keyfile/mongo_keyfile</li>
+</ul>
+
+<p>指定存储身份验证信息的密钥文件的路径。默认缺省。（分片或者副本集创建用户的时候，共享身份验证秘钥—多台机器互相信任彼此的“通信证”）</p>
+
+<ul>
+<li>replSet=testrs</li>
+</ul>
+
+<p>指定一个副本集名称作为参数，所有主机都必须有相同的名称作为同一个副本集。&ndash; 集群配置项</p>
+
+<ul>
+<li>master = true</li>
+</ul>
+
+<p>master：默认为false，当设置为true，则配置当前实例作为主实例。&ndash; 主从配置的主库配置项</p>
+
+<ul>
+<li>slave = true</li>
+</ul>
+
+<p>默认为false，当设置为true，则配置当前实例作为从实例。 &ndash; 主从配置的丛库配置项</p>
+
+<ul>
+<li><p>source：默认为空，格式为：<host>&lt;:port&gt;。用于从实例的复制：设置从的时候指定该选项会让从复制指定主的实例。 &ndash;主从配置的丛库配置项</p></li>
+
+<li><p>only = abc</p></li>
+</ul>
+
+<p>默认为空，则会同步所有库，如果不为空，则同步指定的那个库。&ndash;主从配置的丛库配置项</p>
+
+<ul>
+<li>slavedelay = 60     #延迟60s同步主数据</li>
+</ul>
+
+<p>设置从库同步主库的延迟时间，用于从设置，默认为0。&ndash;主从配置的丛库配置项</p>
+
+<h4 id="一份配置文件">一份配置文件：</h4>
+
+<pre><code class="language-sh">#master.conf
+setParameter:
+   enableLocalhostAuthBypass: false
+
+systemLog:
+   verbosity: 0 # 日志级别。默认0
+   quiet: false  # 设置为true attempts to limit the amount of output.  systemLog.quiet is not recommended for production systems as it may make tracking problems during particular connections much more difficult.
+
+   traceAllExceptions: false  # 调试用
+   path: /data/mongodb/logs/mongo.log
+   logAppend: true
+   logRotate: reopen       #日志文件重写方式
+   destination: file
+   timeStampFormat: iso8601-local        #时间格式  iso8601-local iso8601-utc  ctime
+
+processManagement:
+   fork: true
+   pidFilePath: /data/mongodb/tmp/mongo.pid
+
+net:
+   port: 27017
+   maxIncomingConnections: 65536  # 默认值
+   wireObjectCheck: true         #对文档合法性进行检查
+   unixDomainSocket:             # 监听socket 端口
+      enabled: true
+      pathPrefix: /data/mongodb/tmp/
+      filePermissions: 0
+
+storage:
+   dbPath: /data/mongodb/data/
+   indexBuildRetry: true   # 每个索引单独一个文件
+   journal:
+      enabled: true
+      commitIntervalMs: 100  # 处理journal 日志的时间间隔
+   directoryPerDB: true
+   syncPeriodSecs: 60        # 没60s 写一次磁盘 对 journal files  无作用
+   engine: wiredTiger
+   wiredTiger:
+      engineConfig:
+         cacheSizeGB: 32
+
+replication:
+   replSetName: rs0
+   oplogSizeMB: 50000  ##50G
+security:
+   authorization: enabled
+   clusterAuthMode: keyFile
+   keyFile: /data/mongodb/keyfile
+</code></pre>
+
+<h2 id="用户权限说明">用户权限说明</h2>
+
+<p>mongo中的角色：</p>
+
+<pre><code>Read：允许用户读取指定数据库
+readWrite：允许用户读写指定数据库
+dbAdmin：允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile
+userAdmin：允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户
+clusterAdmin：只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限。
+readAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读权限
+readWriteAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读写权限
+userAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的userAdmin权限
+dbAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限。
+root：只在admin数据库中可用。超级账号，超级权限
+</code></pre>
+
+<h2 id="遇到的问题">遇到的问题</h2>
+
+<h3 id="无主节点">无主节点</h3>
+
+<p>1：在初始化副本之后，执行rs.status() 查看集群的状态，发现3个节点没有一个节点是主节点，有两个节点一直是&rdquo;stateStr&rdquo; : &ldquo;STARTUP&rdquo;状态，原因是服务器磁盘没有空间了，查看下磁盘</p>
+
+<p>2：如果第一步没有成功，继续在其他节点初始化看看，如果报错：</p>
+
+<blockquote>
+<p>replSetInitiate quorum check failed because not all proposed set members responded affirmatively: 172.25.1.32:27012 failed with No route to host</p>
+</blockquote>
+
+<p>是因为mongodb分布式复制集初始化时需要各个节点之间的通话，所以需要将各个节点上的防火墙进行关闭</p>
+
+<p>方法一：命令为：# service iptables stop   （即时生效，临时关闭防火墙，重系统后防火墙会自动开启）</p>
+
+<p>方法二：# chkconfig iptables off  （重启后生效，永久关闭防火墙）</p>
+
+                </article>
+
+              </div>
+              
+              <div class="card-action card-action-links">
+                
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B">编程</a> 
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/mongo">mongo</a> 
+              </div>
+              
+              <div class="card-action">
+                  
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script>
+  window.VALINECONFIG = {
+    el: '#comment',
+    notify: false,
+    verify: false,
+    appId: '\x3c the appId \x3e',
+    appKey: '\x3c the appKey \x3e',
+    placeholder: '\x3c placeholder \x3e',
+    path: window.location.pathname,
+    avatar: 'retro'
+  }
+</script>  
+              </div>
+
+              
+              <div class="pagination-single">
+                 
+                <span class="pagination-item previous">
+                  <i class="material-icons">上一篇</i>
+                  <a href="https://kylinhou.github.io/posts/jvm%E7%9B%91%E6%8E%A7_20180903/" rel="prev">JVM监控</a>
+                </span>  
+                
+                
+                <span class="pagination-item next">
+				<i class="material-icons">下一篇</i>
+                  <a href="https://kylinhou.github.io/posts/mongo-mongo%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7_20180903/" rel="next">mongo性能监控</a>
+                </span> 
+              </div>
+              
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="wrapper">
+        <div class="group group-slink">
+          <h5>Kylin Blog</h5>
+          <p>Theme
+            <a href="https://github.com/stkevintan/canoe" target="_blank">canoe</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="group group-flink">
+          <h5>My Friends</h5>
+          <ul>
+            
+            <li>
+              <a href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+<script>
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.registerLanguage("graphql", function (e) { return { aliases: ["gql"], k: { keyword: "query mutation subscription|10 type interface union scalar fragment|10 enum on ...", literal: "true false null" }, c: [e.HCM, e.QSM, e.NM, { cN: "type", b: "[^\\w][A-Z][a-z]", e: "\\W", eE: !0 }, { cN: "literal", b: "[^\\w][A-Z][A-Z]", e: "\\W", eE: !0 }, { cN: "variable", b: "\\$", e: "\\W", eE: !0 }, { cN: "keyword", b: "[.]{2}", e: "\\." }, { cN: "meta", b: "@", e: "\\W", eE: !0 }], i: /([;<']|BEGIN)/ } });
+  hljs.initHighlightingOnLoad();
+  
+</script>
+
+
+<script type="text/javascript" src="https://kylinhou.github.io//js/polyfill.js"></script>
+<script type="text/javascript" src="https://kylinhou.github.io//js/index.js"></script>
+
+
+
+</body>
+
+</html>

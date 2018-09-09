@@ -14,10 +14,10 @@
     
     <item>
       <title>nginx安装配置</title>
-      <link>https://kylinhou.github.io/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <link>https://kylinhou.github.io/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE_20180519/</link>
       <pubDate>Wed, 24 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://kylinhou.github.io/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE_20180519/</guid>
       <description>&lt;h1 id=&#34;centos下nginx安装配置&#34;&gt;centos下nginx安装配置&lt;/h1&gt;
 
 &lt;h3 id=&#34;安装安装编译工具及库文件&#34;&gt;安装安装编译工具及库文件&lt;/h3&gt;

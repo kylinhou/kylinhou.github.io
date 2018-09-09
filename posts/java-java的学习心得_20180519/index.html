@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    java的学习心得 | Kylin Blog
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://kylinhou.github.io/posts/java-java%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97_20180519/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://kylinhou.github.io//css/index.css">
+  
+  <link href="https://kylinhou.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Kylin Blog" />
+  <link href="https://kylinhou.github.io/index.xml" rel="feed" type="application/rss+xml" title="Kylin Blog" />
+
+  
+  <link href="https://kylinhou.github.io//favicon.ico" rel="shortcut icon">
+
+  <script>
+    window.baseURL = 'https:\/\/kylinhou.github.io\/';
+  </script>
+</head>
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="https://kylinhou.github.io/"  class="brand-logo">
+            <i class="material-icons hide-on-med-and-down"> Ⓚ </i>
+            Kylin Blog
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//archive/" class=''>
+                归档
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//categories/" class=''>
+                分类
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//about/" class=''>
+                关于
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='https://kylinhou.github.io/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel">
+          
+          <div class='group'>
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">9</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/redis'> redis
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/linux'> linux
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class='group'>
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">12</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'> redis
+                  <span class="badge">7</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/loadrunner'> loadrunner
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B'> 编程
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/linux'> linux
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/github'> github
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/java'> java
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/markdown'> markdown
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB'> 软件分享
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/centos'> centos
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hessian'> hessian
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nginx'> nginx
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/ngrinder'> ngrinder
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nload'> nload
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nmon'> nmon
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/premiere'> premiere
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/rpc'> rpc
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/theme'> theme
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E4%B9%B1%E7%A0%81'> 乱码
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6'> 办公软件
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'> 博客搭建
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%B7%A5%E5%85%B7'> 工具
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C'> 视频制作
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E9%80%A0%E6%95%B0%E6%8D%AE'> 造数据
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="https://kylinhou.github.io//" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//archive/" class=''>
+        归档
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//categories/" class=''>
+        分类
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//about/" class=''>
+        关于
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='https://kylinhou.github.io/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+  
+
+
+
+
+<main id="single" role="main" class="main-panel">
+  <div class="page-content">
+    <div class="container container-ex">
+      <div class="inner">
+        <section class="post-wrapper">
+          
+          <div class="toc-panel">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#java的学习心得">java的学习心得</a>
+<ul>
+<li>
+<ul>
+<li><a href="#java的学习过程">java的学习过程</a>
+<ul>
+<li><a href="#第一阶段-基础学习">第一阶段 基础学习</a>
+<ul>
+<li><a href="#基本语法学习">基本语法学习</a></li>
+<li><a href="#集合框架的学习">集合框架的学习</a></li>
+<li><a href="#开始面向对象">开始面向对象</a></li>
+</ul></li>
+<li><a href="#第二阶段-web编程">第二阶段 web编程</a>
+<ul>
+<li><a href="#熟悉api">熟悉API</a></li>
+<li><a href="#html">html</a></li>
+<li><a href="#servlet-和jsp学习">servlet 和JSP学习</a></li>
+<li><a href="#数据库">数据库</a></li>
+</ul></li>
+<li><a href="#第三阶段-j2ee">第三阶段 J2EE</a>
+<ul>
+<li><a href="#spring">spring</a></li>
+<li><a href="#hibernate">Hibernate</a></li>
+<li><a href="#等">等</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#相关资料分享">相关资料分享</a>
+<ul>
+<li><a href="#基础部分资料">基础部分资料</a></li>
+<li><a href="#进阶部分">进阶部分</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+          <div class="post reveal ">
+            <div class="card">
+              <section class="breadcrumb-root">
+  <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+     
+
+    <a class="breadcrumb" href="https://kylinhou.github.io/">
+      首页</a>
+      
+    
+      
+    
+        
+    
+      
+    <span class="breadcrumb">java的学习心得</span>
+
+        
+    
+      
+  </div>
+</section>
+              
+              <div class="card-header postinfo">
+                <span class="card-title">java的学习心得 </span>
+              </div>
+              <div class="card-header date">
+                
+                <div class="group">
+                  <i class="material-icons">book</i>
+                  <address>
+                    归档：
+                    <a href="https://kylinhou.github.io//categories/%E5%8D%9A%E5%AE%A2">博客</a>&nbsp; 
+                  </address>
+                </div>
+                
+                <div class="group">
+                  <i class="material-icons">flag</i>
+                  <time>创建：2016年07月23日
+                  </time>
+                </div>
+                
+                
+
+              </div>
+              
+              <div class="card-content">
+
+                <article class="article">
+                  <h1 id="java的学习心得">java的学习心得</h1>
+
+<p>现在来让我写一篇这样的文章真的感觉压力好大，但是之前已经答应过小学妹抽时间写一个东西，顺便分享一下我的资料。压力真的好大，害怕会误人子弟。所有的这些都是我个人的成长历程，自己的一些心得，仅作参考。希望对你有所帮助。</p>
+
+<p></p>
+
+<h3 id="java的学习过程">java的学习过程</h3>
+
+<p>感觉自己写的有点乱，先附上一个图吧。</p>
+
+<p><img src="http://images.cnitblog.com/blog/475698/201502/101534463707675.jpg" alt="" /></p>
+
+<h4 id="第一阶段-基础学习">第一阶段 基础学习</h4>
+
+<h5 id="基本语法学习">基本语法学习</h5>
+
+<p>首先是要学习最基础的学法，不管学习什么编程语言都要经历的过程，如果你已经有其他编程语言的经验了，那么不用一天的时间你就可以把java的基本语法给掌握，就算你没有编程经验，认真的看，试着上手码一下代码，很快就可以入门的，java作为入门语言还是很容易的，我实在想不通为什么大学里面的入门编程语言都要选择c！</p>
+
+<p>需要学习的基础知识无非就是基本的一些规则，从最简单的变量、字符串到数组，学习怎么写循环，怎么做选择，再到什么是函数，等等，这些很基础的东西随便找一本java书就可以学习到。其实我建议初学者可以去图书馆随便挑一本薄一点的java入门书来看，注意一定要薄一点，第一本书不用太有深度，如果你从一开始就看java编程思想，很容易被吓到的。</p>
+
+<p>路要一步一步来，别贪心。</p>
+
+<h5 id="集合框架的学习">集合框架的学习</h5>
+
+<p>集合这部分我单独列了出来，其实也可以放在基础语法的那部分里面，但是我感觉这部分实在是太重要了，单出来吧。不管是在具体的工作中还是面试的时候，这部分对你都很重要！！！</p>
+
+<p>java的集合大体就这么点东西：</p>
+
+<ul>
+<li>Collection
+
+<ul>
+<li>List</li>
+<li>LinkedList</li>
+<li>ArrayList</li>
+<li>Vector
+
+<ul>
+<li>Stack</li>
+</ul></li>
+<li>Set</li>
+<li>Map</li>
+<li>Hashtable</li>
+<li>HashMap</li>
+<li>WeakHashMap</li>
+</ul></li>
+</ul>
+
+<p>随便百度一下java集合类，就可以找出很多的博客文章来讲解，我就不多费口舌了，附上一个图，感受一下吧。</p>
+
+<p><img src="http://pic002.cnblogs.com/images/2012/80896/2012053020261738.gif" alt="" /></p>
+
+<h5 id="开始面向对象">开始面向对象</h5>
+
+<p>啊，终于开始面向对象了，不管你有没有男朋友女朋友，在java的世界里面，你很容易就面向对象，而且你一定要有面向对象的意识，所以学习java是多么的幸福。</p>
+
+<h4 id="第二阶段-web编程">第二阶段 web编程</h4>
+
+<h5 id="熟悉api">熟悉API</h5>
+
+<h5 id="html">html</h5>
+
+<h5 id="servlet-和jsp学习">servlet 和JSP学习</h5>
+
+<h5 id="数据库">数据库</h5>
+
+<h4 id="第三阶段-j2ee">第三阶段 J2EE</h4>
+
+<h5 id="spring">spring</h5>
+
+<h5 id="hibernate">Hibernate</h5>
+
+<h5 id="等">等</h5>
+
+<h3 id="相关资料分享">相关资料分享</h3>
+
+<h4 id="基础部分资料">基础部分资料</h4>
+
+<p><strong>郝斌的javaSE视频</strong>     <a href="http://pan.baidu.com/s/1o7IbLQ6">百度云分享</a></p>
+
+<p><strong>极客学院</strong>的java基础视频  <a href="http://pan.baidu.com/s/1slPD2Xn">百度云分享</a></p>
+
+<p>除此之外基础的java视频可以看一下<strong>慕课网</strong>的视频，慕课网的视频都是免费的，而且讲的不会很枯燥，闲着没事就可以看几集。直接去这里看就好了 <a href="http://www.imooc.com/course/list?c=java">慕课网</a></p>
+
+<p>上面这些是我比较推荐看的，培训机构的视频很多，但是很多都比较啰嗦，从头看到尾很费时间，但是对于基础比较差的来说可能会有帮助，郝斌老师讲的我感觉是最好的一个，他还有c/++ 、数据库的视频，感兴趣的可以找一找看看，然后慕课网非常推荐，网站的视频资源比较新，讲的虽然浅，但是作为入门解除迷茫还是很不错的。建议初学者按部就班把郝斌老师的视频看一下，一定要跟着视频里面敲代码，不一定是边看边敲，也可以看完之后再敲，但是一定要   <strong>敲敲敲！！！</strong>慕课网或者极客学院的作为辅助下酒菜。</p>
+
+<p>好了，学习玩上面的JAVASE之后，其实你已经学习了很多东西了，可能你还是感觉自己不会写东西啊，怎样写一个程序，写一个网站后台一点概念都没有啊，不要着急，基本的招式学会了之后，后面的路很好走，慢慢的你就会成为武林高手。</p>
+
+<h4 id="进阶部分">进阶部分</h4>
+
+<p>现在可以学习java EE部分的内容了，之前我看过哪些视频我已经忘记了
+这里分享一下<strong>尚学堂</strong>的一些视频 <a href="http://pan.baidu.com/s/1miAo8XE">百度云分享</a></p>
+
+<p>文件夹里面有一个  马士兵_在线聊天系统雏形视频教程  可以先照着视频把这个练习一下，这个我是具体写过的。</p>
+
+<p>然后学习一下 jsp技术   jdbc技术  spring技术   springMVC 等等
+这些视频看完之后对应具体的项目是怎样写出来的就会有了一定的概念。自己也可以写简单的程序了，具体还会用到哪些技术自己再继续去学习。</p>
+
+<p>我不可能把所有你需要的资源都给你找到，你要去学会自己找资源。</p>
+
+<p>然后就是<strong>不断的学习</strong></p>
+
+<p><em>感谢互联网这个时代，让我们能够接触足够多的资源</em></p>
+
+<p><strong>keep learning</strong></p>
+                </article>
+
+              </div>
+              
+              <div class="card-action card-action-links">
+                
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B">编程</a> 
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/java">java</a> 
+              </div>
+              
+              <div class="card-action">
+                  
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script>
+  window.VALINECONFIG = {
+    el: '#comment',
+    notify: false,
+    verify: false,
+    appId: '\x3c the appId \x3e',
+    appKey: '\x3c the appKey \x3e',
+    placeholder: '\x3c placeholder \x3e',
+    path: window.location.pathname,
+    avatar: 'retro'
+  }
+</script>  
+              </div>
+
+              
+              <div class="pagination-single">
+                 
+                <span class="pagination-item previous">
+                  <i class="material-icons">上一篇</i>
+                  <a href="https://kylinhou.github.io/posts/loadrunner-linux%E4%B8%8B%E5%AE%89%E8%A3%85loadrunner%E8%B4%9F%E8%BD%BD%E7%BB%84%E4%BB%B6_20180519/" rel="prev">linux下安装loadrunner负载组件</a>
+                </span>  
+                
+                
+                <span class="pagination-item next">
+				<i class="material-icons">下一篇</i>
+                  <a href="https://kylinhou.github.io/posts/soft-pr%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB_20180519/" rel="next">pr软件分享</a>
+                </span> 
+              </div>
+              
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="wrapper">
+        <div class="group group-slink">
+          <h5>Kylin Blog</h5>
+          <p>Theme
+            <a href="https://github.com/stkevintan/canoe" target="_blank">canoe</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="group group-flink">
+          <h5>My Friends</h5>
+          <ul>
+            
+            <li>
+              <a href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+<script>
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.registerLanguage("graphql", function (e) { return { aliases: ["gql"], k: { keyword: "query mutation subscription|10 type interface union scalar fragment|10 enum on ...", literal: "true false null" }, c: [e.HCM, e.QSM, e.NM, { cN: "type", b: "[^\\w][A-Z][a-z]", e: "\\W", eE: !0 }, { cN: "literal", b: "[^\\w][A-Z][A-Z]", e: "\\W", eE: !0 }, { cN: "variable", b: "\\$", e: "\\W", eE: !0 }, { cN: "keyword", b: "[.]{2}", e: "\\." }, { cN: "meta", b: "@", e: "\\W", eE: !0 }], i: /([;<']|BEGIN)/ } });
+  hljs.initHighlightingOnLoad();
+  
+</script>
+
+
+<script type="text/javascript" src="https://kylinhou.github.io//js/polyfill.js"></script>
+<script type="text/javascript" src="https://kylinhou.github.io//js/index.js"></script>
+
+
+
+</body>
+
+</html>

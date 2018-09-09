@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    mongo性能监控 | Kylin Blog
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://kylinhou.github.io/posts/mongo-mongo%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7_20180903/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://kylinhou.github.io//css/index.css">
+  
+  <link href="https://kylinhou.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Kylin Blog" />
+  <link href="https://kylinhou.github.io/index.xml" rel="feed" type="application/rss+xml" title="Kylin Blog" />
+
+  
+  <link href="https://kylinhou.github.io//favicon.ico" rel="shortcut icon">
+
+  <script>
+    window.baseURL = 'https:\/\/kylinhou.github.io\/';
+  </script>
+</head>
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="https://kylinhou.github.io/"  class="brand-logo">
+            <i class="material-icons hide-on-med-and-down"> Ⓚ </i>
+            Kylin Blog
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//archive/" class=''>
+                归档
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//categories/" class=''>
+                分类
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//about/" class=''>
+                关于
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='https://kylinhou.github.io/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel">
+          
+          <div class='group'>
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">9</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/redis'> redis
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/linux'> linux
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class='group'>
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">12</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'> redis
+                  <span class="badge">7</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/loadrunner'> loadrunner
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B'> 编程
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/linux'> linux
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/github'> github
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/java'> java
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/markdown'> markdown
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB'> 软件分享
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/centos'> centos
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hessian'> hessian
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nginx'> nginx
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/ngrinder'> ngrinder
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nload'> nload
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nmon'> nmon
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/premiere'> premiere
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/rpc'> rpc
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/theme'> theme
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E4%B9%B1%E7%A0%81'> 乱码
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6'> 办公软件
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'> 博客搭建
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%B7%A5%E5%85%B7'> 工具
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C'> 视频制作
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E9%80%A0%E6%95%B0%E6%8D%AE'> 造数据
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="https://kylinhou.github.io//" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//archive/" class=''>
+        归档
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//categories/" class=''>
+        分类
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//about/" class=''>
+        关于
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='https://kylinhou.github.io/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+  
+
+
+
+
+<main id="single" role="main" class="main-panel">
+  <div class="page-content">
+    <div class="container container-ex">
+      <div class="inner">
+        <section class="post-wrapper">
+          
+          <div class="toc-panel">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#mongo性能监控">mongo性能监控</a>
+<ul>
+<li><a href="#一-mongostat详解">一：mongostat详解</a></li>
+<li><a href="#二-使用profiler">二：使用profiler</a>
+<ul>
+<li><a href="#开启查询记录">开启查询记录</a></li>
+<li><a href="#查看profile日志">查看Profile日志:</a></li>
+</ul></li>
+<li><a href="#三-使用web控制台">三：使用Web控制台</a></li>
+<li><a href="#四-db-currentop">四：db.currentOp()</a></li>
+<li><a href="#五-使用web控制台">五：使用Web控制台</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+          <div class="post reveal ">
+            <div class="card">
+              <section class="breadcrumb-root">
+  <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+     
+
+    <a class="breadcrumb" href="https://kylinhou.github.io/">
+      首页</a>
+      
+    
+      
+    
+        
+    
+      
+    <span class="breadcrumb">mongo性能监控</span>
+
+        
+    
+      
+  </div>
+</section>
+              
+              <div class="card-header postinfo">
+                <span class="card-title">mongo性能监控 </span>
+              </div>
+              <div class="card-header date">
+                
+                <div class="group">
+                  <i class="material-icons">book</i>
+                  <address>
+                    归档：
+                    <a href="https://kylinhou.github.io//categories/mongo">mongo</a>&nbsp; 
+                  </address>
+                </div>
+                
+                <div class="group">
+                  <i class="material-icons">flag</i>
+                  <time>创建：2018年07月23日
+                  </time>
+                </div>
+                
+                
+
+              </div>
+              
+              <div class="card-content">
+
+                <article class="article">
+                  
+
+<h1 id="mongo性能监控">mongo性能监控</h1>
+
+<p>2018/4/13</p>
+
+<p>侯兴隆</p>
+
+<h2 id="一-mongostat详解">一：mongostat详解</h2>
+
+<p>mongostat是mongdb自带的状态检测工具，在命令行下使用。它会间隔固定时间获取mongodb的当前运行状态，并输出。</p>
+
+<p>基本的使用方法：</p>
+
+<blockquote>
+<p>./mongostat &ndash;host 172.25.34.8 &ndash;port 27012 -uroot -proot &ndash;authenticationDatabase admin</p>
+</blockquote>
+
+<p>如果需要用户名和密码登录就像上面一样，修改下自己的用户名、密码、认证库就可以了。</p>
+
+<p>执行命令之后可以看到：</p>
+
+<blockquote>
+<p>[mongo@localhost bin]$ ./mongostat &ndash;host 172.25.34.8 &ndash;port 27012 -uroot -proot &ndash;authenticationDatabase admin
+insert query update delete getmore command % dirty % used flushes vsize   res qr|qw ar|aw netIn netOut conn        set repl                      time</p>
+
+<pre><code>*0    *0     *0     *0       0     4|0     0.0   31.9       0 12.6G 11.7G   0|0   0|0  469b  21.0k   56 musicmongo  PRI 2018-04-13T19:49:45+08:00
+*0    *0     *0     *0       0     1|0     0.0   31.9       0 12.6G 11.7G   0|0   0|0   79b  19.7k   56 musicmongo  PRI 2018-04-13T19:49:46+08:00
+*0    *0     *0     *0       0     3|0     0.0   31.9       0 12.6G 11.7G   0|0   0|0  712b  20.2k   56 musicmongo  PRI 2018-04-13T19:49:47+08:00
+</code></pre>
+</blockquote>
+
+<p>它的输出有以下几列：</p>
+
+<ul>
+<li>inserts/s 每秒插入次数</li>
+<li>query/s 每秒查询次数</li>
+<li>update/s 每秒更新次数</li>
+<li>delete/s 每秒删除次数</li>
+<li>getmore/s 每秒执行getmore次数</li>
+<li>command/s 每秒的命令数，比以上插入、查找、更新、删除的综合还多，还统计了别的命令</li>
+<li>flushs/s 每秒执行fsync将数据写入硬盘的次数。</li>
+<li>mapped/s 所有的被mmap的数据量，单位是MB，</li>
+<li>vsize 虚拟内存使用量，单位MB</li>
+<li>res 物理内存使用量，单位MB</li>
+<li>faults/s 每秒访问失败数（只有Linux有），数据被交换出物理内存，放到swap。不要超过100，否则就是机器内存太小，造成频繁swap写入。此时要升级内存或者扩展</li>
+<li>locked % 被锁的时间百分比，尽量控制在50%以下吧</li>
+<li>idx miss % 索引不命中所占百分比。如果太高的话就要考虑索引是不是少了</li>
+<li>q t|r|w 当Mongodb接收到太多的命令而数据库被锁住无法执行完成，它会将命令加入队列。这一栏显示了总共、读、写3个队列的长度，都为0的话表示mongo毫无压力。高并发时，一般队列值会升高。</li>
+<li>conn 当前连接数</li>
+<li>time 时间戳</li>
+</ul>
+
+<h2 id="二-使用profiler">二：使用profiler</h2>
+
+<p>类似于MySQL的slow log, MongoDB可以监控所有慢的以及不慢的查询。</p>
+
+<h3 id="开启查询记录">开启查询记录</h3>
+
+<p>Profiler默认是关闭的，你可以选择全部开启，或者有慢查询的时候开启。</p>
+
+<blockquote>
+<pre><code>&gt; use test
+switched to db test
+&gt; db.setProfilingLevel(2);
+{&quot;was&quot; : 0 , &quot;slowms&quot; : 100, &quot;ok&quot; : 1} // &quot;was&quot; is the old setting
+&gt; db.getProfilingLevel()
+2
+</code></pre>
+</blockquote>
+
+<p>上面profile的级别可以取0，1，2  三个值，他们表示的意义如下：</p>
+
+<p>0 –  不开启</p>
+
+<p>1 –  记录慢命令 (默认为&gt;100ms)</p>
+
+<p>2 –  记录所有命令</p>
+
+<h3 id="查看profile日志">查看Profile日志:</h3>
+
+<blockquote>
+<p>db.system.profile.find().sort({$natural:-1})
+{&ldquo;ts&rdquo; : &ldquo;Thu Jan 29 2009 15:19:32 GMT-0500 (EST)&rdquo; , &ldquo;info&rdquo; :
+&ldquo;query test.$cmd ntoreturn:1 reslen:66 nscanned:0 query: { profile: 2 } nreturned:1 bytes:50&rdquo; ,
+&ldquo;millis&rdquo; : 0} &hellip;</p>
+</blockquote>
+
+<p>3个字段的意义</p>
+
+<ul>
+<li>ts：时间戳</li>
+<li>info：具体的操作</li>
+<li>millis：操作所花时间，毫秒</li>
+</ul>
+
+<p>与 MySQL 的慢查询日志不同，MongoDB Profile  记录是直接存在系统 db 里的，记录位置 system.profile  ，所以，我们只要查询这个 Collection 的记录就可以获取到我们的 Profile  记录了。列出执行时间长于某一限度(5ms)的 Profile  记录：</p>
+
+<blockquote>
+<p>db.system.profile.find( { millis : { $gt : 5 } } )</p>
+</blockquote>
+
+<p>查看最新的 Profile  记录：</p>
+
+<blockquote>
+<p>db.system.profile.find().sort({$natural:-1}).limit(1)
+ { &ldquo;ts&rdquo; : ISODate(&ldquo;2012-05-20T16:50:36.321Z&rdquo;), &ldquo;info&rdquo; : &ldquo;query test.system.profile reslen:1219
+ nscanned:8  \nquery: { query: {}, orderby: { $natural: -1.0 } }  nreturned:8 bytes:1203&rdquo;, &ldquo;millis&rdquo; :
+ 0 }</p>
+</blockquote>
+
+<h2 id="三-使用web控制台">三：使用Web控制台</h2>
+
+<p>Mongodb自带了Web控制台，默认和数据服务一同开启。他的端口在Mongodb数据库服务器端口的基础上加1000，如果是默认的Mongodb数据服务端口(Which is 27017)，则相应的Web端口为28017</p>
+
+<p>这个页面可以看到</p>
+
+<ul>
+<li>当前Mongodb的所有连接</li>
+<li>各个数据库和Collection的访问统计，包括：Reads, Writes, Queries, GetMores ,Inserts, Updates, Removes</li>
+<li>写锁的状态</li>
+<li>以及日志文件的最后几百行（CentOS+10gen yum 安装的mongodb默认的日志文件位于/var/log/mongo/mongod.log)</li>
+</ul>
+
+<h2 id="四-db-currentop">四：db.currentOp()</h2>
+
+<p>Mongodb 的命令一般很快就完成，但是在一台繁忙的机器或者有比较慢的命令时，你可以通过db.currentOp()获取当前正在执行的操作。</p>
+
+<p>在没有负载的机器上，该命令基本上都是返回空的</p>
+
+<blockquote>
+<p>&nbsp; db.currentOp()
+{ &ldquo;inprog&rdquo; : [ ] }</p>
+</blockquote>
+
+<p>字段名字都能自解释。如果你发现一个操作太长，把数据库卡死的话，可以用这个命令杀死他</p>
+
+<blockquote>
+<p>db.killOp(&ldquo;shard3:466404288&rdquo;)</p>
+</blockquote>
+
+<h2 id="五-使用web控制台">五：使用Web控制台</h2>
+
+<p>Mongodb自带了Web控制台，默认和数据服务一同开启。他的端口在Mongodb数据库服务器端口的基础上加1000，如果是默认的Mongodb数据服务端口(Which is 27017)，则相应的Web端口为28017</p>
+
+<p>这个页面可以看到</p>
+
+<ul>
+<li>当前Mongodb的所有连接</li>
+<li>各个数据库和Collection的访问统计，包括：Reads, Writes, Queries, GetMores ,Inserts, Updates, Removes</li>
+<li>写锁的状态</li>
+<li>以及日志文件的最后几百行（CentOS+10gen yum 安装的mongodb默认的日志文件位于/var/log/mongo/mongod.log)</li>
+</ul>
+
+<p>新版本的mongo默认关闭了web控制台，可以在启动mongo的时候开启：</p>
+
+<blockquote>
+<p>~$ sudo mongod &ndash;httpinterface &ndash;dbpath /var/lib/mongodb/ &ndash;logpath /var/log/mongodb/mongod.log &ndash;logappend &amp;</p>
+</blockquote>
+
+<p>&ndash;httpinterface 就是设定开启web服务的，其他参数是设置数据库存储路径，log日志文件存储路径，以及设置log日志记录方式为添加而不是覆盖原来的。</p>
+
+                </article>
+
+              </div>
+              
+              <div class="card-action card-action-links">
+                
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B">编程</a> 
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/mongo">mongo</a> 
+              </div>
+              
+              <div class="card-action">
+                  
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script>
+  window.VALINECONFIG = {
+    el: '#comment',
+    notify: false,
+    verify: false,
+    appId: '\x3c the appId \x3e',
+    appKey: '\x3c the appKey \x3e',
+    placeholder: '\x3c placeholder \x3e',
+    path: window.location.pathname,
+    avatar: 'retro'
+  }
+</script>  
+              </div>
+
+              
+              <div class="pagination-single">
+                 
+                <span class="pagination-item previous">
+                  <i class="material-icons">上一篇</i>
+                  <a href="https://kylinhou.github.io/posts/mongo-mongo-replica-set%E6%90%AD%E5%BB%BA%E4%B8%8E%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6_20180903/" rel="prev">mongo Replica Set搭建与权限控制</a>
+                </span>  
+                
+                
+                <span class="pagination-item next">
+				<i class="material-icons">下一篇</i>
+                  <a href="https://kylinhou.github.io/posts/mongo-mongo%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96_20180903/" rel="next">mongo索引优化</a>
+                </span> 
+              </div>
+              
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="wrapper">
+        <div class="group group-slink">
+          <h5>Kylin Blog</h5>
+          <p>Theme
+            <a href="https://github.com/stkevintan/canoe" target="_blank">canoe</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="group group-flink">
+          <h5>My Friends</h5>
+          <ul>
+            
+            <li>
+              <a href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+<script>
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.registerLanguage("graphql", function (e) { return { aliases: ["gql"], k: { keyword: "query mutation subscription|10 type interface union scalar fragment|10 enum on ...", literal: "true false null" }, c: [e.HCM, e.QSM, e.NM, { cN: "type", b: "[^\\w][A-Z][a-z]", e: "\\W", eE: !0 }, { cN: "literal", b: "[^\\w][A-Z][A-Z]", e: "\\W", eE: !0 }, { cN: "variable", b: "\\$", e: "\\W", eE: !0 }, { cN: "keyword", b: "[.]{2}", e: "\\." }, { cN: "meta", b: "@", e: "\\W", eE: !0 }], i: /([;<']|BEGIN)/ } });
+  hljs.initHighlightingOnLoad();
+  
+</script>
+
+
+<script type="text/javascript" src="https://kylinhou.github.io//js/polyfill.js"></script>
+<script type="text/javascript" src="https://kylinhou.github.io//js/index.js"></script>
+
+
+
+</body>
+
+</html>

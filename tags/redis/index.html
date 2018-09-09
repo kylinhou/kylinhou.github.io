@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Redis | Kylin Blog
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://kylinhou.github.io/tags/redis/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://kylinhou.github.io//css/index.css">
+  
+  <link href="https://kylinhou.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Kylin Blog" />
+  <link href="https://kylinhou.github.io/index.xml" rel="feed" type="application/rss+xml" title="Kylin Blog" />
+
+  
+  <link href="https://kylinhou.github.io//favicon.ico" rel="shortcut icon">
+
+  <script>
+    window.baseURL = 'https:\/\/kylinhou.github.io\/';
+  </script>
+</head>
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="https://kylinhou.github.io/"  class="brand-logo">
+            <i class="material-icons hide-on-med-and-down"> Ⓚ </i>
+            Kylin Blog
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//archive/" class=''>
+                归档
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//categories/" class=''>
+                分类
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//about/" class=''>
+                关于
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='https://kylinhou.github.io/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel">
+          
+          <div class='group'>
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">9</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/redis'> redis
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/linux'> linux
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class='group'>
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">12</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'> redis
+                  <span class="badge">7</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/loadrunner'> loadrunner
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B'> 编程
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/linux'> linux
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/github'> github
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/java'> java
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/markdown'> markdown
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB'> 软件分享
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/centos'> centos
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hessian'> hessian
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nginx'> nginx
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/ngrinder'> ngrinder
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nload'> nload
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nmon'> nmon
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/premiere'> premiere
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/rpc'> rpc
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/theme'> theme
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E4%B9%B1%E7%A0%81'> 乱码
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6'> 办公软件
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'> 博客搭建
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%B7%A5%E5%85%B7'> 工具
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C'> 视频制作
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E9%80%A0%E6%95%B0%E6%8D%AE'> 造数据
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="https://kylinhou.github.io//" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//archive/" class=''>
+        归档
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//categories/" class=''>
+        分类
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//about/" class=''>
+        关于
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='https://kylinhou.github.io/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+  
+<main id="list" role="main" class="main-panel">
+  <div class="container container-ex">
+  <div class="inner">
+    
+    <section class="breadcrumb-root">
+  <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+     
+
+    <a class="breadcrumb" href="https://kylinhou.github.io/">
+      首页</a>
+      
+    
+      
+    <a class="breadcrumb" href='https://kylinhou.github.io/tags/'>Tags</a>
+        
+    
+      
+    <span class="breadcrumb">Redis</span>
+
+        
+    
+      
+  </div>
+</section>
+    
+    <div class="waterfall">
+       
+      <div class="waterfall__item">
+        <div class="card post post-summary reveal">
+          <div class="card-header postinfo">
+            <span class="card-title">
+              <a href="https://kylinhou.github.io/posts/redis-%E9%9B%86%E7%BE%A4_20180903/">redis3.0.7集群搭建指导文档 </a>
+            </span>
+            <div class="card-meta">
+              <time>2018年07月23日</time>
+              
+              <address>
+                
+                <a href='https://kylinhou.github.io//categories/redis'>redis</a>
+                
+              </address>
+              
+            </div>
+          </div>
+
+          <div class="card-content">
+            <article class="article">
+              redis3.0.7集群搭建指导文档 kylin 说明 现在很多项目都用到redis集群，目前普遍使用redis cluster集群方式，本文以3主3从的方 
+              <a href="https://kylinhou.github.io/posts/redis-%E9%9B%86%E7%BE%A4_20180903/" class="readmore">阅读全文</a>
+              
+            </article>
+
+          </div>
+
+          
+          <div class="card-action card-action-links">
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B'>编程</a>
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'>redis</a>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post post-summary reveal">
+          <div class="card-header postinfo">
+            <span class="card-title">
+              <a href="https://kylinhou.github.io/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/">redis使用pipeline批量造数据 </a>
+            </span>
+            <div class="card-meta">
+              <time>2018年07月23日</time>
+              
+              <address>
+                
+                <a href='https://kylinhou.github.io//categories/redis'>redis</a>
+                
+              </address>
+              
+            </div>
+          </div>
+
+          <div class="card-content">
+            <article class="article">
+              redis使用pipeline批量造数据 Redis客户端与redis之间使用TCP协议进行连接，一个客户端可以通过一个socket连接发起多 
+              <a href="https://kylinhou.github.io/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/" class="readmore">阅读全文</a>
+              
+            </article>
+
+          </div>
+
+          
+          <div class="card-action card-action-links">
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'>redis</a>
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E9%80%A0%E6%95%B0%E6%8D%AE'>造数据</a>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post post-summary reveal">
+          <div class="card-header postinfo">
+            <span class="card-title">
+              <a href="https://kylinhou.github.io/posts/redis-redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4_20180903/">redis常用命令 </a>
+            </span>
+            <div class="card-meta">
+              <time>2018年07月23日</time>
+              
+              <address>
+                
+                <a href='https://kylinhou.github.io//categories/redis'>redis</a>
+                
+              </address>
+              
+            </div>
+          </div>
+
+          <div class="card-content">
+            <article class="article">
+              查看redis的状态，TPS 控制在6w之内 redis-cli -P 1499 &ndash;stat redis-cli -h 172.25.1.20 -p 7000 &ndash;stat ./redis-cli -h 192.168.2.237 -p 6379 &ndash;stat 查看内存 # Memory used_memory:13490096 //数据占用了多少内存（字节） used_memory_human:12.87M //数据占用了多少内 
+              <a href="https://kylinhou.github.io/posts/redis-redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4_20180903/" class="readmore">阅读全文</a>
+              
+            </article>
+
+          </div>
+
+          
+          <div class="card-action card-action-links">
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'>redis</a>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post post-summary reveal">
+          <div class="card-header postinfo">
+            <span class="card-title">
+              <a href="https://kylinhou.github.io/posts/redis-%E6%B7%BB%E5%8A%A0%E5%AF%86%E7%A0%81_20180903/">redis添加密码 </a>
+            </span>
+            <div class="card-meta">
+              <time>2018年07月23日</time>
+              
+              <address>
+                
+                <a href='https://kylinhou.github.io//categories/redis'>redis</a>
+                
+              </address>
+              
+            </div>
+          </div>
+
+          <div class="card-content">
+            <article class="article">
+              redis添加密码 之前使用redis一直是无密码直接连接，目前要增加密码认证。 单节点 基于配置文件的密码配置： 打开 redis.conf 设置： requirepass myredispass 取消： #requirepass myredispass 注： 只 
+              <a href="https://kylinhou.github.io/posts/redis-%E6%B7%BB%E5%8A%A0%E5%AF%86%E7%A0%81_20180903/" class="readmore">阅读全文</a>
+              
+            </article>
+
+          </div>
+
+          
+          <div class="card-action card-action-links">
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'>redis</a>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post post-summary reveal">
+          <div class="card-header postinfo">
+            <span class="card-title">
+              <a href="https://kylinhou.github.io/posts/redis-redis%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE_20180903/">redis的安装与配置 </a>
+            </span>
+            <div class="card-meta">
+              <time>2018年07月23日</time>
+              
+              <address>
+                
+                <a href='https://kylinhou.github.io//categories/redis'>redis</a>
+                
+              </address>
+              
+            </div>
+          </div>
+
+          <div class="card-content">
+            <article class="article">
+              redis安装与配置 redis3.0.7安装 1：上传安装文件到服务器 解压： tar -zxvf redis-3.0.7.tar.gz 进行编译安装 cd /home/soft/redis3.0.7 make make install 如果出现如下问题： 先执行一下 make distclean 然后m 
+              <a href="https://kylinhou.github.io/posts/redis-redis%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE_20180903/" class="readmore">阅读全文</a>
+              
+            </article>
+
+          </div>
+
+          
+          <div class="card-action card-action-links">
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'>redis</a>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post post-summary reveal">
+          <div class="card-header postinfo">
+            <span class="card-title">
+              <a href="https://kylinhou.github.io/posts/redis-%E7%9B%91%E6%8E%A7redis_20180903/">监控redis </a>
+            </span>
+            <div class="card-meta">
+              <time>2018年07月23日</time>
+              
+              <address>
+                
+                <a href='https://kylinhou.github.io//categories/redis'>redis</a>
+                
+              </address>
+              
+            </div>
+          </div>
+
+          <div class="card-content">
+            <article class="article">
+              监控redis 监控执行的redis指令 redis-cli monitor | grep &lsquo;[0&rsquo; | grep -v &lsquo;PING&rsquo; | grep -v &lsquo;SELECT&rsquo; redis-cli -h 192.168.2.231 -p 1307 monitor | grep &lsquo;[0&rsquo; | grep -v &lsquo;PING&rsquo; | grep -v &lsquo;SELECT&rsquo; -v ：过滤掉某些词 
+            </article>
+
+          </div>
+
+          
+          <div class="card-action card-action-links">
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'>性能测试</a>
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'>redis</a>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post post-summary reveal">
+          <div class="card-header postinfo">
+            <span class="card-title">
+              <a href="https://kylinhou.github.io/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/">spring boot整合redis </a>
+            </span>
+            <div class="card-meta">
+              <time>2018年04月23日</time>
+              
+              <address>
+                
+                <a href='https://kylinhou.github.io//categories/springboot'>springboot</a>
+                
+              </address>
+              
+            </div>
+          </div>
+
+          <div class="card-content">
+            <article class="article">
+              spring boot整合redis 添加redis引用 &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt; &lt;version&gt;1.5.6.RELEASE&lt;/version&gt; &lt;/dependency&gt; 配置文件配置redis源 ############################################################## # REDIS (RedisProperties) # Redis数据库索引（默认为0） spring.redis.database=0 # Redis服务器地 
+              <a href="https://kylinhou.github.io/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/" class="readmore">阅读全文</a>
+              
+            </article>
+
+          </div>
+
+          
+          <div class="card-action card-action-links">
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/springboot'>springboot</a>
+            <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'>redis</a>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    <div class="center">
+      <div class="pagination">
+         
+
+      </div>
+    </div>
+  </div>
+</div> <footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="wrapper">
+        <div class="group group-slink">
+          <h5>Kylin Blog</h5>
+          <p>Theme
+            <a href="https://github.com/stkevintan/canoe" target="_blank">canoe</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="group group-flink">
+          <h5>My Friends</h5>
+          <ul>
+            
+            <li>
+              <a href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+<script>
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.registerLanguage("graphql", function (e) { return { aliases: ["gql"], k: { keyword: "query mutation subscription|10 type interface union scalar fragment|10 enum on ...", literal: "true false null" }, c: [e.HCM, e.QSM, e.NM, { cN: "type", b: "[^\\w][A-Z][a-z]", e: "\\W", eE: !0 }, { cN: "literal", b: "[^\\w][A-Z][A-Z]", e: "\\W", eE: !0 }, { cN: "variable", b: "\\$", e: "\\W", eE: !0 }, { cN: "keyword", b: "[.]{2}", e: "\\." }, { cN: "meta", b: "@", e: "\\W", eE: !0 }], i: /([;<']|BEGIN)/ } });
+  hljs.initHighlightingOnLoad();
+  
+</script>
+
+
+<script type="text/javascript" src="https://kylinhou.github.io//js/polyfill.js"></script>
+<script type="text/javascript" src="https://kylinhou.github.io//js/index.js"></script>
+
+
+
+</body>
+
+</html>

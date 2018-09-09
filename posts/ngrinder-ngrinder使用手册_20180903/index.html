@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    nGrinder使用手册 | Kylin Blog
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://kylinhou.github.io/posts/ngrinder-ngrinder%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C_20180903/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://kylinhou.github.io//css/index.css">
+  
+  <link href="https://kylinhou.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Kylin Blog" />
+  <link href="https://kylinhou.github.io/index.xml" rel="feed" type="application/rss+xml" title="Kylin Blog" />
+
+  
+  <link href="https://kylinhou.github.io//favicon.ico" rel="shortcut icon">
+
+  <script>
+    window.baseURL = 'https:\/\/kylinhou.github.io\/';
+  </script>
+</head>
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="https://kylinhou.github.io/"  class="brand-logo">
+            <i class="material-icons hide-on-med-and-down"> Ⓚ </i>
+            Kylin Blog
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//archive/" class=''>
+                归档
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//categories/" class=''>
+                分类
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://kylinhou.github.io//about/" class=''>
+                关于
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='https://kylinhou.github.io/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel">
+          
+          <div class='group'>
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">9</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/redis'> redis
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/linux'> linux
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//categories/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class='group'>
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">12</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/redis'> redis
+                  <span class="badge">7</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/loadrunner'> loadrunner
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%BC%96%E7%A8%8B'> 编程
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/linux'> linux
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/github'> github
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/java'> java
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/markdown'> markdown
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/springboot'> springboot
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB'> 软件分享
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/centos'> centos
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hessian'> hessian
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/jvm'> jvm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nginx'> nginx
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/ngrinder'> ngrinder
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nload'> nload
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/nmon'> nmon
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/premiere'> premiere
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/rpc'> rpc
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/theme'> theme
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E4%B9%B1%E7%A0%81'> 乱码
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6'> 办公软件
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'> 博客搭建
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E5%B7%A5%E5%85%B7'> 工具
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C'> 视频制作
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://kylinhou.github.io//tags/%E9%80%A0%E6%95%B0%E6%8D%AE'> 造数据
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="https://kylinhou.github.io//" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//archive/" class=''>
+        归档
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//categories/" class=''>
+        分类
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://kylinhou.github.io//about/" class=''>
+        关于
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://kylinhou.github.io//tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='https://kylinhou.github.io/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+  
+
+
+
+
+<main id="single" role="main" class="main-panel">
+  <div class="page-content">
+    <div class="container container-ex">
+      <div class="inner">
+        <section class="post-wrapper">
+          
+          <div class="toc-panel">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#ngrinder使用手册">nGrinder使用手册</a>
+<ul>
+<li><a href="#一-它是谁-它从哪里来-它可以做什么">一：它是谁，它从哪里来，它可以做什么</a></li>
+<li><a href="#二-ngrinder的组件介绍">二：nGrinder的组件介绍</a></li>
+<li><a href="#三-ngrinder的安装">三：nGrinder的安装</a>
+<ul>
+<li><a href="#下载">下载</a></li>
+<li><a href="#部署controller">部署controller</a></li>
+<li><a href="#下载agent">下载agent</a></li>
+<li><a href="#monitor安装与配置">monitor安装与配置</a></li>
+</ul></li>
+<li><a href="#四-使用ngrinder快速进行简单测试">四：使用nGrinder快速进行简单测试</a></li>
+<li><a href="#五-ngrinder脚本编写">五：nGrinder脚本编写</a>
+<ul>
+<li><a href="#一-传参">一：传参</a>
+<ul>
+<li><a href="#基本参数">基本参数</a></li>
+<li><a href="#post-请求发送带json格式的内容">post 请求发送带json格式的内容</a></li>
+<li><a href="#添加请求头">添加请求头</a></li>
+<li><a href="#文件参数化之随机取值">文件参数化之随机取值</a></li>
+<li><a href="#自然数之随机取值">自然数之随机取值</a></li>
+<li><a href="#自然数之唯一取值">自然数之唯一取值</a></li>
+</ul></li>
+<li><a href="#四-断言">四：断言</a></li>
+</ul></li>
+<li><a href="#六-场景设计">六：场景设计</a>
+<ul>
+<li><a href="#agent的配置文件">agent的配置文件</a></li>
+</ul></li>
+<li><a href="#八-常见问题及解决方案">八：常见问题及解决方案</a>
+<ul>
+<li>
+<ul>
+<li><a href="#1-脚本已经更新了-为什么从之前压测的场景链接到脚本查看-依然是旧代码">1：脚本已经更新了，为什么从之前压测的场景链接到脚本查看，依然是旧代码？</a></li>
+<li><a href="#2-为什么不能同时开始两个压测">2：为什么不能同时开始两个压测？</a></li>
+<li><a href="#3-为什么分发文件特别慢">3：为什么分发文件特别慢</a></li>
+<li><a href="#4-异常测试删除停止方法">4：异常测试删除停止方法</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#九-已完善功能">九：已完善功能</a></li>
+<li><a href="#十-待做事项">十：待做事项</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+          <div class="post reveal ">
+            <div class="card">
+              <section class="breadcrumb-root">
+  <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+     
+
+    <a class="breadcrumb" href="https://kylinhou.github.io/">
+      首页</a>
+      
+    
+      
+    
+        
+    
+      
+    <span class="breadcrumb">nGrinder使用手册</span>
+
+        
+    
+      
+  </div>
+</section>
+              
+              <div class="card-header postinfo">
+                <span class="card-title">nGrinder使用手册 </span>
+              </div>
+              <div class="card-header date">
+                
+                <div class="group">
+                  <i class="material-icons">book</i>
+                  <address>
+                    归档：
+                    <a href="https://kylinhou.github.io//categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95">性能测试</a>&nbsp; 
+                  </address>
+                </div>
+                
+                <div class="group">
+                  <i class="material-icons">flag</i>
+                  <time>创建：2018年07月23日
+                  </time>
+                </div>
+                
+                
+
+              </div>
+              
+              <div class="card-content">
+
+                <article class="article">
+                  
+
+<h1 id="ngrinder使用手册">nGrinder使用手册</h1>
+
+<h2 id="一-它是谁-它从哪里来-它可以做什么">一：它是谁，它从哪里来，它可以做什么</h2>
+
+<p>nGrinder为什么叫nGrinder，因为是基于Grinder开源项目开发实现。</p>
+
+<p>是NAVER（韩国最大互联网公司NHN旗下搜索引擎网站）开源的性能测试工具。</p>
+
+<p>nGrinder是一款非常易用，有友好简洁的用户界面和controller-agent分布式结构的强大的压力测试工具。</p>
+
+<blockquote>
+<p>它是由一个controller和连接它的多个agent组成，用户可以通过web界面管理和控制测试，以及查看测试报告，controller会把测试分发到一个或多个agent去执行。用户可以设置使用多个进程和线程来并发的执行该脚本，而且在同一线程中，来重复不断的执行测试脚本，来模拟很多并发用户。</p>
+
+<p>nGrinder的测试是基于一个python的测试脚本，用户按照一定规则编写测试脚本以后，controller会将脚本以及需要的其他文件分发到agent，用Jython执行。并在执行过程中收集运行情况、响应时间、测试目标服务器的运行情况等。并保存这些数据生成运行报告，以供以后查看。</p>
+</blockquote>
+
+<p><img src="http://img.blog.csdn.net/20160225193628121" alt="ngrinder架构" /></p>
+
+<h2 id="二-ngrinder的组件介绍">二：nGrinder的组件介绍</h2>
+
+<p>nGrinder可以简单分为3部分：</p>
+
+<ul>
+<li>Controller：为性能测试提供web interface、协同测试进程、收集和显示测试数据、管理测试脚本</li>
+<li>Agent：运行进程和线程，压测目标服务</li>
+<li>Monitor：监控目标系统性能(cpu/memory)， 可以自定义收集的数据(比如 jvm数据)</li>
+</ul>
+
+<h2 id="三-ngrinder的安装">三：nGrinder的安装</h2>
+
+<p>nGrinder的安装与部署部分简单介绍一下，不做详细说明。</p>
+
+<p>nGrinder是一个web应用(Controller)和Java应用(Agent, Monitor)的组合。安装 nGrinder的Controller和Agent，需要安装JDK 1.6或更高的版本。.</p>
+
+<p>nGrinder需要用到很多端口。如果有些端口被防火墙阻挡，请联系服务器管理开放下面这些端口。</p>
+
+<ul>
+<li>Agent : Any ==&gt; Controller : 16001</li>
+<li>Agent : Any ==&gt; Controller : 12000 ~ 12000+(允许并发测试的数量)</li>
+<li>Controller : Any ==&gt; Monitor : 13243</li>
+</ul>
+
+<h3 id="下载">下载</h3>
+
+<p>可以从这里下载 ：<a href="https://sourceforge.net/projects/ngrinder/files/">https://sourceforge.net/projects/ngrinder/files/</a></p>
+
+<p>最新版本 <a href="https://sourceforge.net/projects/ngrinder/files/ngrinder-3.3/">ngrinder-3.3</a></p>
+
+<p>下载 <a href="https://sourceforge.net/projects/ngrinder/files/ngrinder-3.3/ngrinder-controller-3.3.war/download">ngrinder-controller-3.3.war</a></p>
+
+<p>有了war包，nGrinder就可以跟其他的java web工程一样部署到tomcat里面，然后启动。</p>
+
+<p>除此之外，nGrinder还可以直接用命令行启动:</p>
+
+<blockquote>
+<p>java -jar ngrinder-controller-X.X.war</p>
+</blockquote>
+
+<h3 id="部署controller">部署controller</h3>
+
+<p><strong>以在Tomcat中运行为例简单说明部署步骤</strong></p>
+
+<ol>
+<li>将war包文件放到tomcat的webapps文件夹中，${TOMCAT_HOME}/webapps 。如果你不想通过路径ngrinder-controller访问nGrinder，可以修改war包文件的名称为war.</li>
+<li>然后打开sh或者catalina.bat将下面这行命令添加到文件头部。</li>
+</ol>
+
+<pre><code>JAVA_OPTS=&quot;-Xms600m -Xmx1024m -XX:MaxPermSize=200m&quot;    # for catalina.sh
+set JAVA_OPTS=-Xms600m -Xmx1024m -XX:MaxPermSize=200m   # for catalina.bat
+</code></pre>
+
+<ol>
+<li>然后运行${TOMCAT_HOME}/startup.sh或者bat</li>
+<li>打开浏览器访问<a href="http://ip:port/ngrinder-controller-X.X或者http://ip:port如果你修改了war包文件的名称为war">http://ip:port/ngrinder-controller-X.X或者http://ip:port如果你修改了war包文件的名称为war</a></li>
+</ol>
+
+<p>体验入口：<a href="http://172.25.1.16:6703/ngrinder/login">http://172.25.1.16:6703/ngrinder/login</a>  用户名:guest 密码：vivo123456</p>
+
+<h3 id="下载agent">下载agent</h3>
+
+<p><img src="http://img.ispenn.com/wp-content/uploads/2015/08/ngrinder-image-3.png" alt="下载agent" /></p>
+
+<p>进入controller可以下载agent，agent下载下来是一个tar包，上传tar包到准备好的压力机上，解压包并且运行其中的sh或者run_agent.bat即可。</p>
+
+<blockquote>
+<p>[ngrinder@localhost ~]$ cd ngrinder-agent
+[ngrinder@localhost ngrinder-agent]$ ll
+total 40
+-rw-r&ndash;r&ndash; 1 ngrinder root     1733 Apr 19 20:02 __agent.conf
+drwxrwxr-x 2 ngrinder ngrinder 4096 Apr 17 22:02 dubbo
+drwxr-xr-x 2 ngrinder root     4096 Apr 18 10:46 lib
+-rwxr-xr-x 1 ngrinder root      367 Jun 17  2017 run_agent.bat
+-rwxr-xr-x 1 ngrinder root       83 Jun 17  2017 run_agent_bg.sh
+-rwxr-xr-x 1 ngrinder root      237 Jun 17  2017 run_agent_internal.bat
+-rwxr-xr-x 1 ngrinder root       99 Jun 17  2017 run_agent_internal.sh
+-rwxr-xr-x 1 ngrinder root      312 Jun 17  2017 run_agent.sh
+-rwxr-xr-x 1 ngrinder root      135 Jun 17  2017 stop_agent.bat
+-rwxr-xr-x 1 ngrinder root      136 Jun 17  2017 stop_agent.sh</p>
+</blockquote>
+
+<p>其中 __agent.conf 是agent的配置文件，主要的配置项说明：</p>
+
+<ol>
+<li><p>agent.controller_host=172.25.1.16   controller 的ip</p></li>
+
+<li><p>agent.region=NONE</p></li>
+
+<li><p>agent.host_id=172.25.34.11 agent的ip</p></li>
+</ol>
+
+<p>说明：</p>
+
+<ul>
+<li>agent.region的默认配置为NONE ,标明改负载机可以被所有的账户使用，如果想要设置该agent只能被指定用户使用，配置格式为：NONE_owned_name：如 agent.region=NONE_owned_xlhou2</li>
+<li>agent.host_id 可以不做配置，不做配置的话默认线上服务器的hostname。</li>
+</ul>
+
+<p>注：修改agent的配置之后重新启动需要添加 -o 参数。o: overwrite</p>
+
+<h3 id="monitor安装与配置">monitor安装与配置</h3>
+
+<ol>
+<li><p>下载monitor。
+<img src="http://img.ispenn.com/wp-content/uploads/2015/08/ngrinder-image-5.png" alt="" /></p></li>
+
+<li><p>解压monitor的包并运行下面的命令：</p></li>
+</ol>
+
+<pre><code>run_monitor_bg.sh  # for linux / mac
+run_monitor.bat # for windows
+</code></pre>
+
+<ol>
+<li>停止monitor，运行下面的命令：</li>
+</ol>
+
+<pre><code>stop_monitor.sh # for linux / mac
+stop_monitor.bat –o # for windows
+</code></pre>
+
+<h2 id="四-使用ngrinder快速进行简单测试">四：使用nGrinder快速进行简单测试</h2>
+
+<p>使用nGrinder进行性能测试的完整步骤：</p>
+
+<ol>
+<li>编写脚本</li>
+<li>设计场景：配置虚拟用户数，周期，步长控制，资源监控；</li>
+<li>运行结束报告自动生成</li>
+</ol>
+
+<p>对于简单的测试可以让nGrinder会自动生成测试脚本</p>
+
+<p><img src="/1524897814690.png" alt="1524897814690" /></p>
+
+<p>如果需要对一个接口进行简单的压测，接口url是固定的，请求参数无需改动，可以直接快速压测，无需手动写脚本。</p>
+
+<p>进入nGrinder首页，在quick start右边的填写框里面写上待测试的url，例如</p>
+
+<p><a href="http://172.25.34.6:3001/qqServerSwitch.do">http://172.25.34.6:3001/qqServerSwitch.do</a></p>
+
+<p>然后点击 start test</p>
+
+<p><img src="/1524898143010.png" alt="1524898143010" /></p>
+
+<p>填写相关信息，然后点击save and test就可以进行开始测试了。脚本都不需要写，是不是很方便？</p>
+
+<p>当然对于大部分脚本需要自己手动编写，设置参数化、设置断言。具体的脚本编写后面介绍。</p>
+
+<h2 id="五-ngrinder脚本编写">五：nGrinder脚本编写</h2>
+
+<p>nGrinder的脚本可以使用groovy语言，可以使用python语言。</p>
+
+<p>下面简单介绍下脚本的基本内容，具体可以下载脚本参考。</p>
+
+<p>脚本下载地址：</p>
+
+<p>如果使用groovy语言建议选择groovy maven工程，也就是在下拉框中选择 groovy maven project</p>
+
+<p>看下工程的目录结构</p>
+
+<p><img src="/1524905025100.png" alt="1524905025100" /></p>
+
+<p>工程结构跟普通的java maven工程是一样的，默认的工程主要的测试代码只有一个TestRunner文件</p>
+
+<p>主要的代码如下，非常的简单：</p>
+
+<pre><code class="language-java">	@Test
+	public void test(){
+		HTTPResponse result = request.GET(&quot;http://172.25.34.6:3001/qqServerSwitch.do&quot;, params)
+
+		if (result.statusCode == 301 || result.statusCode == 302) {
+			grinder.logger.warn(&quot;Warning. The response may not be correct. The response code was {}.&quot;, result.statusCode); 
+		} else {
+			assertThat(result.statusCode, is(200));
+		}
+	}
+</code></pre>
+
+<p>自动生成的脚本是检查输入的链接是不是返回200，可以根据自己的需要修改脚本。</p>
+
+<h3 id="一-传参">一：传参</h3>
+
+<h4 id="基本参数">基本参数</h4>
+
+<p>ngrinder发送http请求时，传参都是通过一个数组 params</p>
+
+<pre><code class="language-java">// 1:类变量声明
+public static NVPair[] params = []
+
+// 2:请求之前设置参数
+// 设置请求参数
+List&lt;NVPair&gt; paramList = new ArrayList&lt;NVPair&gt;()
+		paramList.add(new NVPair(&quot;id&quot;, id))
+		paramList.add(new NVPair(&quot;type&quot;, type))
+            
+ params = paramList.toArray()
+//3：发请求
+    HTTPResponse result = request.GET(&quot;http://172.25.34.6:2820/api19.do&quot;, params)
+</code></pre>
+
+<h4 id="post-请求发送带json格式的内容">post 请求发送带json格式的内容</h4>
+
+<pre><code class="language-java">// json字符串
+        def json = '{&quot;tenant_code&quot;:&quot;XXX&quot;,&quot;user_name&quot;:&quot;XX&quot;,&quot;password&quot;:&quot;X&quot;,&quot;skip_duplicate_entries&quot;:true,&quot;type&quot;:&quot;0&quot;}';
+// 发起请求
+HTTPResponse result = request.POST(&quot;http://192.XX/XX/login&quot;, json.getBytes(), headers());
+</code></pre>
+
+<h4 id="添加请求头">添加请求头</h4>
+
+<pre><code class="language-java">////根据需求添加请求头信息
+List&lt;NVPair&gt; headerList = new ArrayList&lt;NVPair&gt;()
+headerList.add(new NVPair(&quot;test_header&quot;, &quot;test_header_value&quot;))
+headers = headerList.toArray()
+////发请求
+HTTPResponse result = request.GET(&quot;http://172.25.34.6:2820/api19.do&quot;, params, headers() )
+</code></pre>
+
+<p>例如设置 接口请求 的 Content-Type 类型</p>
+
+<blockquote>
+<pre><code>&gt; headerList.add(new NVPair(&quot;Content-Type&quot;, &quot;application/json&quot;))
+&gt; ```
+
+### 二：上传文件
+
+待补充
+
+### 三：参数化
+
+####  文件参数化之唯一取值
+
+```java
+String[] getParam(String [] ParamCsv,int processNumber,int threadNumber,int agentNumber,int curCount) {
+
+        int totalThreadCount
+        int totalProcessCount
+        if(grinder.getProperties() == null ) {
+            totalProcessCount = 1;//grinder.getProperties().getInt(&quot;grinder.processes&quot;, 1); //总共并发执行的进程数，数量
+            totalThreadCount = 100;//grinder.getProperties().getInt(&quot;grinder.threads&quot;, 1);////一个进程下总共的线程数，数量
+        } else {
+            totalThreadCount = grinder.getProperties().getInt(&quot;grinder.threads&quot;, 1);//grinder.getProperties().getInt(&quot;grinder.threads&quot;, 1);////一个进程下总共的线程数，数量
+            totalProcessCount = grinder.getProperties().getInt(&quot;grinder.processes&quot;, 1);//grinder.getProperties().getInt(&quot;grinder.processes&quot;, 1); //总共并发执行的进程数，数量
+        }
+
+        String[] CsvColumn ;
+        if( ParamCsv.length == 0 ) {
+            ////解决当用不到参数化文件时，ParamCsv.length=0带来的问题
+            CsvColumn = null;
+        } else {
+             int curTestNum = (curCount * totalProcessCount * totalThreadCount) + (processNumber * totalThreadCount) + threadNumber;/////总执行过程中的一个编号，所有线程的所有循环统一编号下的一个编号
+            int agentCsvLen = ParamCsv.length/agentNumber////ParamCsv.length的值是大于等于参数个数的agentNumber的最小倍数。用来确保参数个数可以被代理机器整出的
+            int index = (agentNumber-1)*agentCsvLen + curTestNum%agentCsvLen;
+            String tempStr = ParamCsv[index];//取csv文件的哪一行
+            CsvColumn = tempStr.split(&quot;,&quot;);
+        }
+        return CsvColumn
+    }
+</code></pre>
+</blockquote>
+
+<h4 id="文件参数化之随机取值">文件参数化之随机取值</h4>
+
+<pre><code class="language-java">    /**
+     * 随机从文件中获取一行，进行参数化
+     * @param ParamCsv
+     * @return
+     */
+    public String[] getRandomFromFile(String [] ParamCsv) {
+        RandomNumber randomNumber = new RandomNumber();
+        int index = randomNumber.getRandomNumber(0,ParamCsv.size());
+        String parms = ParamCsv[index];
+        String[] CsvColumn = parms.split(&quot;,&quot;);
+        return CsvColumn;
+    }
+</code></pre>
+
+<h4 id="自然数之随机取值">自然数之随机取值</h4>
+
+<p>获取随机数</p>
+
+<p>getRandomNumber(int 12,int 500)：返回12到500之间的随机数</p>
+
+<pre><code class="language-java">    int getRandomNumber(int min,int max) {
+        Random random = new Random();
+        int s = random.nextInt(max)%(max-min+1) + min;
+        return s
+    }
+</code></pre>
+
+<p>如果需要返回的是一定长度的编码，如 00015</p>
+
+<p>只需调用 autoGenericCode(int 15, int 5)</p>
+
+<pre><code class="language-java">    /**
+     * 不够位数的在前面补0，保留size的长度位数字
+     * @param code
+     * @return
+     */
+    public String autoGenericCode(int code, int size) {
+        String result = &quot;&quot;;
+        ////num 指定长度
+        result = String.format(&quot;%0&quot; + size + &quot;d&quot;, code);
+        return result;
+    }
+</code></pre>
+
+<h4 id="自然数之唯一取值">自然数之唯一取值</h4>
+
+<p>getUniqueCode返回的是指定格式的编码</p>
+
+<pre><code>openid = &quot;1234567&quot;+randomNumber.getUniqueCode(8,processNumber,threadNumber,agentNumber,curCount)
+</code></pre>
+
+<p>那么openid就是 123456700000000、123456700000001、123456700000002递增</p>
+
+<pre><code class="language-java">public String  getUniqueCode(int codeSize,int processNumber,int threadNumber,int agentNumber,int curCount){
+        int totalThreadCount
+        int totalProcessCount
+        String num;
+        if(grinder.getProperties() == null ) {
+            // 这时候是在本地调试代码
+            totalProcessCount = 1;
+            totalThreadCount = 100;
+        } else {
+            //压测时
+            ////一个进程下总共的线程数，数量
+            totalThreadCount = grinder.getProperties().getInt(&quot;grinder.threads&quot;, 1);
+            //总共并发执行的进程数，数量
+            totalProcessCount = grinder.getProperties().getInt(&quot;grinder.processes&quot;, 1); 
+        }
+        int curTestNum = (curCount * totalProcessCount * totalThreadCount) + (processNumber * totalThreadCount) + threadNumber;/////总执行过程中的一个编号，所有线程的所有循环统一编号下的一个编号
+        num = autoGenericCode(curTestNum,codeSize)
+        return num;
+    }
+</code></pre>
+
+<p>如果只是需要简单的数字，对长度无要求，可以用 getUniqueNum</p>
+
+<pre><code class="language-java">public int  getUniqueNum(int processNumber,int threadNumber,int agentNumber,int curCount){
+        int totalThreadCount
+        int totalProcessCount
+
+        if(grinder.getProperties() == null ) {
+            // 这时候是在本地调试代码
+            totalProcessCount = 1;
+            totalThreadCount = 100;
+        } else {
+             //压测时
+            ////一个进程下总共的线程数，数量
+            totalThreadCount = grinder.getProperties().getInt(&quot;grinder.threads&quot;, 1);
+             //总共并发执行的进程数，数量
+            totalProcessCount = grinder.getProperties().getInt(&quot;grinder.processes&quot;, 1);
+
+        }
+        int curTestNum = (curCount * totalProcessCount * totalThreadCount) + (processNumber * totalThreadCount) + threadNumber;/////总执行过程中的一个编号，所有线程的所有循环统一编号下的一个编号
+
+        return curTestNum;
+    }
+</code></pre>
+
+<h3 id="四-断言">四：断言</h3>
+
+<p>可以简单判断标志性语句是否存在，也可以强校验出现次数</p>
+
+<pre><code class="language-java">String target = &quot;\&quot;code\&quot;:0&quot;;
+int times = judgeResult.findOccurrence(target,respData);
+if ( times == 1) {
+    Assert.assertTrue(true)
+} else {
+	grinder.logger.error(&quot;data:&quot;+respData);
+	Assert.fail(&quot;request it's failed !!&quot;)
+}
+</code></pre>
+
+<h2 id="六-场景设计">六：场景设计</h2>
+
+<p>一张图就够了</p>
+
+<p><img src="/1526903315639.png" alt="1526903315639" /></p>
+
+<p>## 七：agent设置</p>
+
+<h3 id="agent的配置文件">agent的配置文件</h3>
+
+<p>上传agent jar包到服务器上解压 ngrinder-agent-3.4.1-172.25.34.10.tar</p>
+
+<p>文件：</p>
+
+<blockquote>
+<p>__agent.conf
+ dubbo
+ lib
+ run_agent.bat
+ run_agent_bg.sh
+ run_agent_internal.bat
+ run_agent_internal.sh
+ run_agent.sh
+ stop_agent.bat
+ stop_agent.sh</p>
+</blockquote>
+
+<p>配置文件主要配置说明：</p>
+
+<p>vim  __agent.conf ：</p>
+
+<pre><code class="language-shell">common.start_mode=agent
+agent.controller_host=172.25.1.16 #配置controller的ip 
+agent.controller_port=16001 #与controller通信的端口号，默认
+agent.region=NONE_owned_xlhou  #使用权限配置
+agent.host_id=172.25.34.11 #在controller中显示的本机名称
+</code></pre>
+
+<p>如果配置 agent.region=NONE ，所有用户都可以使用该负载机，建议添加权限控制。</p>
+
+<p>###　配置ulimit 运行更多线程</p>
+
+<p>如果agent运行在Linux下，你可能需要配置ulimit让其运行更多的线程。请检查下面的配置。</p>
+
+<blockquote>
+<p>ulimit -a
+core file size          (blocks, -c) 0
+data seg size          (kbytes, -d) unlimited
+scheduling priority            (-e) 0
+file size              (blocks, -f) unlimited
+pending signals                (-i) 30676
+max locked memory      (kbytes, -l) 64
+max memory size        (kbytes, -m) unlimited
+open files                      (-n) 16000
+pipe size            (512 bytes, -p) 8
+POSIX message queues    (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 10240
+cpu time              (seconds, -t) unlimited
+max user processes              (-u) 32768
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited</p>
+</blockquote>
+
+<p>注意查看 max user processes   的值，如果太小是不行的</p>
+
+<p>修改max user processes</p>
+
+<ol>
+<li>使用root用户修改配置文件：/etc/security/limits.conf</li>
+</ol>
+
+<p>增加如下内容</p>
+
+<p>* soft nproc 32768</p>
+
+<p>* hard nproc 32768</p>
+
+<p>* soft nofile 16000</p>
+
+<p>* hard nofile 16000</p>
+
+<p>其中nofile对应open_files</p>
+
+<p>nproc对应max_user_processes</p>
+
+<ol>
+<li>修改/etc/security/limits.d/90-nproc.conf</li>
+</ol>
+
+<p>将 * soft nproc 1024  修改为：</p>
+
+<p>* soft nproc 32768</p>
+
+<h2 id="八-常见问题及解决方案">八：常见问题及解决方案</h2>
+
+<h4 id="1-脚本已经更新了-为什么从之前压测的场景链接到脚本查看-依然是旧代码">1：脚本已经更新了，为什么从之前压测的场景链接到脚本查看，依然是旧代码？</h4>
+
+<p>答：ngrinder会保存每一次压测时的脚本信息，如果脚本更新了，从已经压测结束的场景里面链接到的脚本无法查看最新代码，需要 复制场景为新的待压测场景，下次压测将使用新的代码。</p>
+
+<h4 id="2-为什么不能同时开始两个压测">2：为什么不能同时开始两个压测？</h4>
+
+<p>答：ngrinder有限制，同一个用户在同时只能有一个场景压测。如果需要同时跑两个场景，可以使用其他账户一起压测。</p>
+
+<h4 id="3-为什么分发文件特别慢">3：为什么分发文件特别慢</h4>
+
+<p>答：ngrinder有安全分发机制，当检测到需要分发的文件达到一定大小，将会开启安全分发模式，每隔5s分发一个文件，所以在超过安全限制之后，文件越多分发越慢，分发慢的原因是分发每个文件之前需要等待一段时间，而不是分发文件本身慢。</p>
+
+<p>ngrinder默认安全大小 1000000 字节，目前，我已经修改为15M，如有需要可以继续修改。修改方法：</p>
+
+<p>配置文件中修改如下配置项，然后重启服务：</p>
+
+<blockquote>
+<p>controller.safe_dist_threshold=1000000</p>
+</blockquote>
+
+<h4 id="4-异常测试删除停止方法">4：异常测试删除停止方法</h4>
+
+<p>异常测试无法正常删除，场景的选择框无法选择</p>
+
+<p>目前没有比较好的方式，可以采用编辑网页html代码的方式，删除disabled标签，然后选中删除。</p>
+
+<h2 id="九-已完善功能">九：已完善功能</h2>
+
+<ol>
+<li>脚本选择框加大</li>
+<li>常用参数化方式</li>
+</ol>
+
+<h2 id="十-待做事项">十：待做事项</h2>
+
+<ol>
+<li>异常测试可以随意删除</li>
+<li>添加JVM监控</li>
+</ol>
+
+                </article>
+
+              </div>
+              
+              <div class="card-action card-action-links">
+                
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95">性能测试</a> 
+                <a class="btn btn-secondary" href="https://kylinhou.github.io//tags/ngrinder">ngrinder</a> 
+              </div>
+              
+              <div class="card-action">
+                  
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script>
+  window.VALINECONFIG = {
+    el: '#comment',
+    notify: false,
+    verify: false,
+    appId: '\x3c the appId \x3e',
+    appKey: '\x3c the appKey \x3e',
+    placeholder: '\x3c placeholder \x3e',
+    path: window.location.pathname,
+    avatar: 'retro'
+  }
+</script>  
+              </div>
+
+              
+              <div class="pagination-single">
+                 
+                <span class="pagination-item previous">
+                  <i class="material-icons">上一篇</i>
+                  <a href="https://kylinhou.github.io/posts/mysql%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7_20180903/" rel="prev">mysql管理工具</a>
+                </span>  
+                
+                
+                <span class="pagination-item next">
+				<i class="material-icons">下一篇</i>
+                  <a href="https://kylinhou.github.io/posts/redis-%E9%9B%86%E7%BE%A4_20180903/" rel="next">redis3.0.7集群搭建指导文档</a>
+                </span> 
+              </div>
+              
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="wrapper">
+        <div class="group group-slink">
+          <h5>Kylin Blog</h5>
+          <p>Theme
+            <a href="https://github.com/stkevintan/canoe" target="_blank">canoe</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="group group-flink">
+          <h5>My Friends</h5>
+          <ul>
+            
+            <li>
+              <a href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+<script>
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.registerLanguage("graphql", function (e) { return { aliases: ["gql"], k: { keyword: "query mutation subscription|10 type interface union scalar fragment|10 enum on ...", literal: "true false null" }, c: [e.HCM, e.QSM, e.NM, { cN: "type", b: "[^\\w][A-Z][a-z]", e: "\\W", eE: !0 }, { cN: "literal", b: "[^\\w][A-Z][A-Z]", e: "\\W", eE: !0 }, { cN: "variable", b: "\\$", e: "\\W", eE: !0 }, { cN: "keyword", b: "[.]{2}", e: "\\." }, { cN: "meta", b: "@", e: "\\W", eE: !0 }], i: /([;<']|BEGIN)/ } });
+  hljs.initHighlightingOnLoad();
+  
+</script>
+
+
+<script type="text/javascript" src="https://kylinhou.github.io//js/polyfill.js"></script>
+<script type="text/javascript" src="https://kylinhou.github.io//js/index.js"></script>
+
+
+
+</body>
+
+</html>

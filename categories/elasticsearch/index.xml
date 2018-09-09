@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elasticsearch on Kylin Blog</title>
+    <link>https://kylinhou.github.io/categories/elasticsearch/</link>
+    <description>Recent content in Elasticsearch on Kylin Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kylinhou.github.io/categories/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elasticsearch的安装与配置</title>
+      <link>https://kylinhou.github.io/posts/elasticsearch-es%E7%9A%84%E5%AE%89%E8%A3%85_20180903/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/elasticsearch-es%E7%9A%84%E5%AE%89%E8%A3%85_20180903/</guid>
+      <description>Elasticsearch的安装与配置 环境信息： centos、Elasticsearch2.1.1 安装 下载 curl -L -O https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-2.1.1.zip 解压 yum install -y unzip zip unzip elasticsearch-2.1.1.zip 启动 cd elasticsearch-2.1.1</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,17 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
-    <lastBuildDate>Sat, 23 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kylinhou.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>spring boot写hessian服务</title>
+      <link>https://kylinhou.github.io/posts/springboot-hessian%E6%9C%8D%E5%8A%A1_20180903/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/springboot-hessian%E6%9C%8D%E5%8A%A1_20180903/</guid>
+      <description>spring boot写hessian服务 添加hessian maven引用 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.caucho&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;hessian&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0.38&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 新建服务提供接口 新建接口 BillingService，接口有一个方法</description>
+    </item>
+    
+    <item>
       <title>java的学习心得</title>
-      <link>https://kylinhou.github.io/posts/java-java%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</link>
+      <link>https://kylinhou.github.io/posts/java-java%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97_20180519/</link>
       <pubDate>Sat, 23 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/java-java%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</guid>
+      <guid>https://kylinhou.github.io/posts/java-java%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97_20180519/</guid>
       <description>&lt;h1 id=&#34;java的学习心得&#34;&gt;java的学习心得&lt;/h1&gt;
 
 &lt;p&gt;现在来让我写一篇这样的文章真的感觉压力好大，但是之前已经答应过小学妹抽时间写一个东西，顺便分享一下我的资料。压力真的好大，害怕会误人子弟。所有的这些都是我个人的成长历程，自己的一些心得，仅作参考。希望对你有所帮助。&lt;/p&gt;

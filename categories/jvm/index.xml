@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jvm on Kylin Blog</title>
+    <link>https://kylinhou.github.io/categories/jvm/</link>
+    <description>Recent content in Jvm on Kylin Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kylinhou.github.io/categories/jvm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JVM监控</title>
+      <link>https://kylinhou.github.io/posts/jvm%E7%9B%91%E6%8E%A7_20180903/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylinhou.github.io/posts/jvm%E7%9B%91%E6%8E%A7_20180903/</guid>
+      <description>JVM监控 java线程状态 jstack jstack主要用来查看某个Java进程内的线程堆栈信息。 jstack可以定位到线程堆栈，根据堆栈信息我们可以定</description>
+    </item>
+    
+  </channel>
+</rss>
