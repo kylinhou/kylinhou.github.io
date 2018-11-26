@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    spring boot使用AOP进行日志输出 | Kylin Blog
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kylin10.top/posts/springboot-%E4%BD%BF%E7%94%A8aop%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA_20181126/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://kylin10.top//css/index.css">
+  
+  <link href="http://kylin10.top/index.xml" rel="alternate" type="application/rss+xml" title="Kylin Blog" />
+  <link href="http://kylin10.top/index.xml" rel="feed" type="application/rss+xml" title="Kylin Blog" />
+
+  
+  <link href="http://kylin10.top//favicon.ico" rel="shortcut icon">
+
+  <script>
+    window.baseURL = 'http:\/\/kylin10.top\/';
+  </script>
+</head>
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="http://kylin10.top/"  class="brand-logo">
+            <i class="material-icons hide-on-med-and-down"> Ⓚ </i>
+            Kylin Blog
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="http://kylin10.top//" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="http://kylin10.top//archive/" class=''>
+                归档
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="http://kylin10.top//categories/" class=''>
+                分类
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="http://kylin10.top//about/" class=''>
+                关于
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='http://kylin10.top/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel">
+          
+          <div class='group'>
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">10</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/redis'> redis
+                  <span class="badge">8</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/springboot'> springboot
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/java'> java
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/jvm'> jvm
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/linux'> linux
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/aop'> aop
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/spring'> spring
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class='group'>
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">14</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/redis'> redis
+                  <span class="badge">13</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/loadrunner'> loadrunner
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/springboot'> springboot
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E7%BC%96%E7%A8%8B'> 编程
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/java'> java
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/linux'> linux
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/centos'> centos
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/github'> github
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/jvm'> jvm
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/markdown'> markdown
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/nginx'> nginx
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB'> 软件分享
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/hessian'> hessian
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/mat'> mat
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/ngrinder'> ngrinder
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/nload'> nload
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/nmon'> nmon
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/premiere'> premiere
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/rpc'> rpc
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/theme'> theme
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E4%B9%B1%E7%A0%81'> 乱码
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6'> 办公软件
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'> 博客搭建
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%B7%A5%E5%85%B7'> 工具
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C'> 视频制作
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E9%80%A0%E6%95%B0%E6%8D%AE'> 造数据
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="http://kylin10.top//" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="http://kylin10.top//archive/" class=''>
+        归档
+      </a>
+    </li>
+    
+    <li>
+      <a href="http://kylin10.top//categories/" class=''>
+        分类
+      </a>
+    </li>
+    
+    <li>
+      <a href="http://kylin10.top//about/" class=''>
+        关于
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='http://kylin10.top//categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='http://kylin10.top//tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='http://kylin10.top/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+  
+
+
+
+
+<main id="single" role="main" class="main-panel">
+  <div class="page-content">
+    <div class="container container-ex">
+      <div class="inner">
+        <section class="post-wrapper">
+          
+          <div class="toc-panel">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#spring-boot使用aop进行日志输出">spring boot使用AOP进行日志输出</a>
+<ul>
+<li><a href="#spring-aop介绍">Spring AOP介绍</a></li>
+<li><a href="#编写业务类">编写业务类</a></li>
+<li><a href="#引入aop依赖">引入AOP依赖</a></li>
+<li><a href="#定义切面类">定义切面类</a></li>
+<li><a href="#使用自定义注解">使用自定义注解</a>
+<ul>
+<li><a href="#自定义注解">自定义注解</a>
+<ul>
+<li><a href="#自定义注解说明">自定义注解说明</a></li>
+</ul></li>
+<li><a href="#在切面中使用注解定义切点">在切面中使用注解定义切点</a></li>
+<li><a href="#业务代码中使用注解">业务代码中使用注解</a></li>
+</ul></li>
+<li><a href="#aop使用的总结">AOP使用的总结</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+          <div class="post reveal ">
+            <div class="card">
+              <section class="breadcrumb-root">
+  <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+     
+
+    <a class="breadcrumb" href="http://kylin10.top/">
+      首页</a>
+      
+    
+      
+    
+        
+    
+      
+    <span class="breadcrumb">spring boot使用AOP进行日志输出</span>
+
+        
+    
+      
+  </div>
+</section>
+              
+              <div class="card-header postinfo">
+                <span class="card-title">spring boot使用AOP进行日志输出 </span>
+              </div>
+              <div class="card-header date">
+                
+                <div class="group">
+                  <i class="material-icons">book</i>
+                  <address>
+                    归档：
+                    <a href="http://kylin10.top//categories/springboot">springboot</a>&nbsp; 
+                    <a href="http://kylin10.top//categories/java">java</a>&nbsp; 
+                    <a href="http://kylin10.top//categories/aop">AOP</a>&nbsp; 
+                  </address>
+                </div>
+                
+                <div class="group">
+                  <i class="material-icons">flag</i>
+                  <time>创建：2018年11月 8日
+                  </time>
+                </div>
+                
+                
+
+              </div>
+              
+              <div class="card-content">
+
+                <article class="article">
+                  
+
+<h1 id="spring-boot使用aop进行日志输出">spring boot使用AOP进行日志输出</h1>
+
+<h2 id="spring-aop介绍">Spring AOP介绍</h2>
+
+<p>Spring AOP专门介绍文章：</p>
+
+<p>这里就不单独说AOP 了，只是做个简单的说明在spring boot中如何快速使用切面进行日志输出。</p>
+
+<h2 id="编写业务类">编写业务类</h2>
+
+<p>AOP的目的就是让程序员专心实现自己的业务逻辑，其他的公共事情交给其他应用对象来处理。先写一个简单的controller代表我们的业务。</p>
+
+<pre><code class="language-java">import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AopController {
+
+    @RequestMapping(&quot;/helloaop&quot;)
+    public String sayHello() {
+        return &quot;hello AOP&quot;;
+    }
+}
+</code></pre>
+
+<p>一个很简单的controller，收到请求之后返回&rdquo;hello AOP&rdquo;。</p>
+
+<p>返回&rdquo;hello AOP&rdquo;就是我们的业务，虽然我们想要在收到请求之前和之后打印日志，但是我们无需在业务类中进行任何操作，这些都交给AOP。</p>
+
+<h2 id="引入aop依赖">引入AOP依赖</h2>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h2 id="定义切面类">定义切面类</h2>
+
+<pre><code class="language-java">package com.kylin.chapter4;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+
+
+@Aspect
+@Component
+public class MyAspect {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    /**
+     * 通过@Pointcut定义的切入点为com.kylin.chapter4包下的所有函数（对web层所有请求处理做切入点）
+     */
+    @Pointcut(&quot;execution(public * com.kylin.chapter4..*.*(..))&quot;)
+    public void webLog(){}
+
+    @Before(&quot;webLog()&quot;)
+    public void doBefore(JoinPoint joinPoint) throws Throwable {
+        // 接收到请求，记录请求内容
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = attributes.getRequest();
+
+        // 记录下请求内容
+        logger.info(&quot;URL : &quot; + request.getRequestURL().toString());
+        logger.info(&quot;HTTP_METHOD : &quot; + request.getMethod());
+        logger.info(&quot;IP : &quot; + request.getRemoteAddr());
+        logger.info(&quot;CLASS_METHOD : &quot; + joinPoint.getSignature().getDeclaringTypeName() + &quot;.&quot; + joinPoint.getSignature().getName());
+        logger.info(&quot;ARGS : &quot; + Arrays.toString(joinPoint.getArgs()));
+
+    }
+
+    @AfterReturning(returning = &quot;ret&quot;, pointcut = &quot;webLog()&quot;)
+    public void doAfterReturning(Object ret) throws Throwable {
+        // 处理完请求，返回内容
+        logger.info(&quot;RESPONSE : &quot; + ret);
+    }
+
+}
+</code></pre>
+
+<p>重新请求服务：/helloaop</p>
+
+<p>看到控制台输出日志：</p>
+
+<pre><code class="language-xml">2018-11-08 16:26:31.397  INFO 13316 --- [nio-8080-exec-4] com.kylin.chapter4.MyAspect              : URL : http://127.0.0.1:8080/helloaop
+2018-11-08 16:26:31.397  INFO 13316 --- [nio-8080-exec-4] com.kylin.chapter4.MyAspect              : HTTP_METHOD : GET
+2018-11-08 16:26:31.397  INFO 13316 --- [nio-8080-exec-4] com.kylin.chapter4.MyAspect              : IP : 127.0.0.1
+2018-11-08 16:26:31.397  INFO 13316 --- [nio-8080-exec-4] com.kylin.chapter4.MyAspect              : CLASS_METHOD : com.kylin.chapter4.AopController.sayHello
+2018-11-08 16:26:31.397  INFO 13316 --- [nio-8080-exec-4] com.kylin.chapter4.MyAspect              : ARGS : []
+2018-11-08 16:26:31.397  INFO 13316 --- [nio-8080-exec-4] com.kylin.chapter4.MyAspect              : RESPONSE : hello AOP
+</code></pre>
+
+<p>非常简单对不对？在spring boot中都无需使用<code>@EnableAspectJAutoProxy</code>来启用AOP。默认是开启的。</p>
+
+<h2 id="使用自定义注解">使用自定义注解</h2>
+
+<p>其实在上面已经实现了我们的需求，上面的方法定义表达式是通过一个规则表达式：</p>
+
+<p>@Pointcut(&ldquo;execution(public * com.kylin.chapter4..<em>.</em>(..))&ldquo;)</p>
+
+<p>这样在灵活性上差一点，下面介绍下通过使用自定义注解的方式实现同样的功能。</p>
+
+<h3 id="自定义注解">自定义注解</h3>
+
+<pre><code class="language-java">package com.kylin.chapter4.annotation;
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface AnalysisActuator {
+    String note() default &quot;&quot;;
+}
+
+</code></pre>
+
+<h4 id="自定义注解说明">自定义注解说明</h4>
+
+<p><strong>一、注解的基础</strong></p>
+
+<p>1.注解的定义：Java文件叫做Annotation，用@interface表示。</p>
+
+<p>2.元注解：@interface上面按需要注解上一些东西，包括@Retention、@Target、@Document、@Inherited四种。</p>
+
+<p>3.注解的保留策略：</p>
+
+<p>　　@Retention(RetentionPolicy.SOURCE)   // 注解仅存在于源码中，在class字节码文件中不包含</p>
+
+<p>　　@Retention(RetentionPolicy.CLASS)     // 默认的保留策略，注解会在class字节码文件中存在，但运行时无法获得</p>
+
+<p>　　@Retention(RetentionPolicy.RUNTIME)  // 注解会在class字节码文件中存在，在运行时可以通过反射获取到</p>
+
+<p>4.注解的作用目标：</p>
+
+<p>　　@Target(ElementType.TYPE)                      // 接口、类、枚举、注解</p>
+
+<p>　　@Target(ElementType.FIELD)                     // 字段、枚举的常量</p>
+
+<p>　　@Target(ElementType.METHOD)                 // 方法</p>
+
+<p>　　@Target(ElementType.PARAMETER)            // 方法参数</p>
+
+<p>　　@Target(ElementType.CONSTRUCTOR)       // 构造函数</p>
+
+<p>　　@Target(ElementType.LOCAL_VARIABLE)   // 局部变量</p>
+
+<p>　　@Target(ElementType.ANNOTATION_TYPE) // 注解</p>
+
+<p>　　@Target(ElementType.PACKAGE)               // 包</p>
+
+<p>5.注解包含在javadoc中：</p>
+
+<p>　　@Documented</p>
+
+<p>6.注解可以被继承：</p>
+
+<p>　　@Inherited</p>
+
+<p>7.注解解析器：用来解析自定义注解。</p>
+
+<h3 id="在切面中使用注解定义切点">在切面中使用注解定义切点</h3>
+
+<pre><code class="language-java">    @Pointcut(&quot;@annotation(analysisActuator)&quot;)
+    public void webLogAnnotation(AnalysisActuator analysisActuator){}
+
+
+    @Before(&quot;webLogAnnotation(analysisActuator)&quot;)
+    public void doBefore(JoinPoint joinPoint,AnalysisActuator analysisActuator) throws Throwable {
+        // 接收到请求，记录请求内容
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = attributes.getRequest();
+
+        // 记录下请求内容
+        logger.info(analysisActuator.note());
+        logger.info(&quot;URL : &quot; + request.getRequestURL().toString());
+        logger.info(&quot;HTTP_METHOD : &quot; + request.getMethod());
+        logger.info(&quot;IP : &quot; + request.getRemoteAddr());
+        logger.info(&quot;CLASS_METHOD : &quot; + joinPoint.getSignature().getDeclaringTypeName() + &quot;.&quot; + joinPoint.getSignature().getName());
+        logger.info(&quot;ARGS : &quot; + Arrays.toString(joinPoint.getArgs()));
+    }
+</code></pre>
+
+<h3 id="业务代码中使用注解">业务代码中使用注解</h3>
+
+<pre><code class="language-java">    @AnalysisActuator(note = &quot;使用自定义注解&quot;)
+    @RequestMapping(&quot;/helloaop&quot;)
+    public String sayHello() {
+        return &quot;hello AOP&quot;;
+    }
+</code></pre>
+
+<p>再次请求，看到输出日志：</p>
+
+<pre><code class="language-sh">2018-11-08 17:24:05.096  INFO 15088 --- [nio-8080-exec-3] com.kylin.chapter4.MyAspect              : 使用自定义注解
+2018-11-08 17:24:05.096  INFO 15088 --- [nio-8080-exec-3] com.kylin.chapter4.MyAspect              : URL : http://127.0.0.1:8080/helloaop
+2018-11-08 17:24:05.096  INFO 15088 --- [nio-8080-exec-3] com.kylin.chapter4.MyAspect              : HTTP_METHOD : GET
+2018-11-08 17:24:05.096  INFO 15088 --- [nio-8080-exec-3] com.kylin.chapter4.MyAspect              : IP : 127.0.0.1
+2018-11-08 17:24:05.096  INFO 15088 --- [nio-8080-exec-3] com.kylin.chapter4.MyAspect              : CLASS_METHOD : com.kylin.chapter4.AopController.sayHello
+2018-11-08 17:24:05.096  INFO 15088 --- [nio-8080-exec-3] com.kylin.chapter4.MyAspect              : ARGS : []
+2018-11-08 17:24:05.096  INFO 15088 --- [nio-8080-exec-3] com.kylin.chapter4.MyAspect              : RESPONSE : hello AOP
+</code></pre>
+
+<h2 id="aop使用的总结">AOP使用的总结</h2>
+
+<p>在spring boot中使用AOP的基本步骤：</p>
+
+<ol>
+<li><p>引入AOP依赖</p></li>
+
+<li><p>定义切面类</p></li>
+</ol>
+
+<p>@Aspect
+   @Component</p>
+
+<ol>
+<li><p>切面类中定义切点</p></li>
+
+<li><p>在切面类中编写通知方法</p></li>
+</ol>
+
+<p>在定义切点的时候可以使用自定义的注解。</p>
+
+                </article>
+
+              </div>
+              
+              <div class="card-action card-action-links">
+                
+                <a class="btn btn-secondary" href="http://kylin10.top//tags/springboot">springboot</a> 
+                <a class="btn btn-secondary" href="http://kylin10.top//tags/redis">redis</a> 
+              </div>
+              
+              <div class="card-action">
+                  
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script>
+  window.VALINECONFIG = {
+    el: '#comment',
+    notify: false,
+    verify: false,
+    appId: '\x3c the appId \x3e',
+    appKey: '\x3c the appKey \x3e',
+    placeholder: '\x3c placeholder \x3e',
+    path: window.location.pathname,
+    avatar: 'retro'
+  }
+</script>  
+              </div>
+
+              
+              <div class="pagination-single">
+                 
+                <span class="pagination-item previous">
+                  <i class="material-icons">上一篇</i>
+                  <a href="http://kylin10.top/posts/jvm-mat%E5%88%86%E6%9E%90dump%E6%96%87%E4%BB%B6_20181122/" rel="prev">MAT分析dump文件</a>
+                </span>  
+                
+                
+                <span class="pagination-item next">
+				<i class="material-icons">下一篇</i>
+                  <a href="http://kylin10.top/posts/java-java%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%A8%A1%E5%BC%8F_20181105/" rel="next">java对象的几种创建方式</a>
+                </span> 
+              </div>
+              
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="wrapper">
+        <div class="group group-slink">
+          <h5>Kylin Blog</h5>
+          <p>Theme
+            <a href="https://github.com/stkevintan/canoe" target="_blank">canoe</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="group group-flink">
+          <h5>My Friends</h5>
+          <ul>
+            
+            <li>
+              <a href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+<script>
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.registerLanguage("graphql", function (e) { return { aliases: ["gql"], k: { keyword: "query mutation subscription|10 type interface union scalar fragment|10 enum on ...", literal: "true false null" }, c: [e.HCM, e.QSM, e.NM, { cN: "type", b: "[^\\w][A-Z][a-z]", e: "\\W", eE: !0 }, { cN: "literal", b: "[^\\w][A-Z][A-Z]", e: "\\W", eE: !0 }, { cN: "variable", b: "\\$", e: "\\W", eE: !0 }, { cN: "keyword", b: "[.]{2}", e: "\\." }, { cN: "meta", b: "@", e: "\\W", eE: !0 }], i: /([;<']|BEGIN)/ } });
+  hljs.initHighlightingOnLoad();
+  
+</script>
+
+
+<script type="text/javascript" src="http://kylin10.top//js/polyfill.js"></script>
+<script type="text/javascript" src="http://kylin10.top//js/index.js"></script>
+
+
+
+</body>
+
+</html>

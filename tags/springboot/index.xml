@@ -2,32 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Springboot on Kylin Blog</title>
-    <link>https://kylinhou.github.io/tags/springboot/</link>
+    <link>http://kylin10.top/tags/springboot/</link>
     <description>Recent content in Springboot on Kylin Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
-    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kylinhou.github.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kylin10.top/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>spring boot使用AOP进行日志输出</title>
+      <link>http://kylin10.top/posts/springboot-%E4%BD%BF%E7%94%A8aop%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA_20181126/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/springboot-%E4%BD%BF%E7%94%A8aop%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA_20181126/</guid>
+      <description>spring boot使用AOP进行日志输出 Spring AOP介绍 Spring AOP专门介绍文章： 这里就不单独说AOP 了，只是做个简单的说明在spring boot中如何快速</description>
+    </item>
+    
+    <item>
       <title>spring boot写hessian服务</title>
-      <link>https://kylinhou.github.io/posts/springboot-hessian%E6%9C%8D%E5%8A%A1_20180903/</link>
+      <link>http://kylin10.top/posts/springboot-hessian%E6%9C%8D%E5%8A%A1_20180903/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/springboot-hessian%E6%9C%8D%E5%8A%A1_20180903/</guid>
+      <guid>http://kylin10.top/posts/springboot-hessian%E6%9C%8D%E5%8A%A1_20180903/</guid>
       <description>spring boot写hessian服务 添加hessian maven引用 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.caucho&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;hessian&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0.38&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 新建服务提供接口 新建接口 BillingService，接口有一个方法</description>
     </item>
     
     <item>
-      <title>spring boot整合redis</title>
-      <link>https://kylinhou.github.io/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/</link>
+      <title>Spring Data Redis使用详细介绍</title>
+      <link>http://kylin10.top/posts/springboot-redis%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E_20181116/</link>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/</guid>
+      <guid>http://kylin10.top/posts/springboot-redis%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E_20181116/</guid>
+      <description>Spring Data Redis使用详细介绍 redis redis是一种特殊类型的数据库，称之为key-value存储。说到key-value存储，可能会想到Map。不</description>
+    </item>
+    
+    <item>
+      <title>spring boot整合redis</title>
+      <link>http://kylin10.top/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/</guid>
       <description>spring boot整合redis 添加redis引用 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-data-redis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.5.6.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 配置文件配置redis源 ############################################################## # REDIS (RedisProperties) # Redis数据库索引（默认为0） spring.redis.database=0 # Redis服务器地</description>
+    </item>
+    
+    <item>
+      <title>spring boot整合redis</title>
+      <link>http://kylin10.top/posts/springboot-redis%E6%95%B4%E5%90%88_20181116/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/springboot-redis%E6%95%B4%E5%90%88_20181116/</guid>
+      <description>spring boot整合redis 这篇文章介绍如何简单快速的使用redis。可以概括为下面几个步骤 添加maven引用：spring-boot-star</description>
+    </item>
+    
+    <item>
+      <title>spring 自动装配</title>
+      <link>http://kylin10.top/posts/spring-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D_20181106/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/spring-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D_20181106/</guid>
+      <description></description>
     </item>
     
   </channel>

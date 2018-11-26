@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>工具 on Kylin Blog</title>
-    <link>https://kylinhou.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
+    <link>http://kylin10.top/tags/%E5%B7%A5%E5%85%B7/</link>
     <description>Recent content in 工具 on Kylin Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kylinhou.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kylin10.top/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mysql管理工具</title>
-      <link>https://kylinhou.github.io/posts/mysql%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7_20180903/</link>
+      <link>http://kylin10.top/posts/mysql%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7_20180903/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/mysql%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7_20180903/</guid>
+      <guid>http://kylin10.top/posts/mysql%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7_20180903/</guid>
       <description>mysql管理工具 经常与mysql打交道，有一个好用的管理工具效率会高很多。当然没有最好的只有适合自己的，下面介绍几个使用过的管理工具。 navicat 这</description>
     </item>
     

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on Kylin Blog</title>
+    <link>http://kylin10.top/categories/spring/</link>
+    <description>Recent content in Spring on Kylin Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Mon, 23 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://kylin10.top/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>spring 自动装配</title>
+      <link>http://kylin10.top/posts/spring-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D_20181106/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/spring-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D_20181106/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

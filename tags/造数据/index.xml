@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>造数据 on Kylin Blog</title>
-    <link>https://kylinhou.github.io/tags/%E9%80%A0%E6%95%B0%E6%8D%AE/</link>
+    <link>http://kylin10.top/tags/%E9%80%A0%E6%95%B0%E6%8D%AE/</link>
     <description>Recent content in 造数据 on Kylin Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kylinhou.github.io/tags/%E9%80%A0%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kylin10.top/tags/%E9%80%A0%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>redis使用pipeline批量造数据</title>
-      <link>https://kylinhou.github.io/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/</link>
+      <link>http://kylin10.top/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/</guid>
+      <guid>http://kylin10.top/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/</guid>
       <description>redis使用pipeline批量造数据 Redis客户端与redis之间使用TCP协议进行连接，一个客户端可以通过一个socket连接发起多</description>
     </item>
     

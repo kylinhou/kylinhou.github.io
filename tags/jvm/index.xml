@@ -2,22 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jvm on Kylin Blog</title>
-    <link>https://kylinhou.github.io/tags/jvm/</link>
+    <link>http://kylin10.top/tags/jvm/</link>
     <description>Recent content in Jvm on Kylin Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
-    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kylinhou.github.io/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kylin10.top/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>MAT分析dump文件</title>
+      <link>http://kylin10.top/posts/jvm-mat%E5%88%86%E6%9E%90dump%E6%96%87%E4%BB%B6_20181122/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/jvm-mat%E5%88%86%E6%9E%90dump%E6%96%87%E4%BB%B6_20181122/</guid>
+      <description>MAT分析dump文件 Heap Dump Heap Dump：堆转储文件，生成 Java™ 堆上所有活动对象（即，正在运行的 Java 应用程序正在使用的对象）的转储 转储格式有两</description>
+    </item>
+    
+    <item>
       <title>JVM监控</title>
-      <link>https://kylinhou.github.io/posts/jvm%E7%9B%91%E6%8E%A7_20180903/</link>
+      <link>http://kylin10.top/posts/jvm%E7%9B%91%E6%8E%A7_20180903/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/jvm%E7%9B%91%E6%8E%A7_20180903/</guid>
+      <guid>http://kylin10.top/posts/jvm%E7%9B%91%E6%8E%A7_20180903/</guid>
       <description>JVM监控 java线程状态 jstack jstack主要用来查看某个Java进程内的线程堆栈信息。 jstack可以定位到线程堆栈，根据堆栈信息我们可以定</description>
     </item>
     

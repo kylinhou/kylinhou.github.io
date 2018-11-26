@@ -2,22 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Kylin Blog</title>
-    <link>https://kylinhou.github.io/tags/nginx/</link>
+    <link>http://kylin10.top/tags/nginx/</link>
     <description>Recent content in Nginx on Kylin Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Wed, 24 Aug 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kylinhou.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kylin10.top/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>nginx安装配置</title>
-      <link>https://kylinhou.github.io/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE_20180519/</link>
+      <link>http://kylin10.top/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE_20180519/</link>
       <pubDate>Wed, 24 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE_20180519/</guid>
+      <guid>http://kylin10.top/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE_20180519/</guid>
+      <description>&lt;h1 id=&#34;centos下nginx安装配置&#34;&gt;centos下nginx安装配置&lt;/h1&gt;
+
+&lt;h3 id=&#34;安装安装编译工具及库文件&#34;&gt;安装安装编译工具及库文件&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nginx安装配置</title>
+      <link>http://kylin10.top/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE_20180922/</link>
+      <pubDate>Wed, 24 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/nginx-centos%E4%B8%8Bnginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE_20180922/</guid>
       <description>&lt;h1 id=&#34;centos下nginx安装配置&#34;&gt;centos下nginx安装配置&lt;/h1&gt;
 
 &lt;h3 id=&#34;安装安装编译工具及库文件&#34;&gt;安装安装编译工具及库文件&lt;/h3&gt;

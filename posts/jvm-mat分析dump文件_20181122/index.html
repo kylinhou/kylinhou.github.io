@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    MAT分析dump文件 | Kylin Blog
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kylin10.top/posts/jvm-mat%E5%88%86%E6%9E%90dump%E6%96%87%E4%BB%B6_20181122/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://kylin10.top//css/index.css">
+  
+  <link href="http://kylin10.top/index.xml" rel="alternate" type="application/rss+xml" title="Kylin Blog" />
+  <link href="http://kylin10.top/index.xml" rel="feed" type="application/rss+xml" title="Kylin Blog" />
+
+  
+  <link href="http://kylin10.top//favicon.ico" rel="shortcut icon">
+
+  <script>
+    window.baseURL = 'http:\/\/kylin10.top\/';
+  </script>
+</head>
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="http://kylin10.top/"  class="brand-logo">
+            <i class="material-icons hide-on-med-and-down"> Ⓚ </i>
+            Kylin Blog
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="http://kylin10.top//" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="http://kylin10.top//archive/" class=''>
+                归档
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="http://kylin10.top//categories/" class=''>
+                分类
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="http://kylin10.top//about/" class=''>
+                关于
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='http://kylin10.top/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel">
+          
+          <div class='group'>
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">10</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/redis'> redis
+                  <span class="badge">8</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/springboot'> springboot
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/java'> java
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/jvm'> jvm
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/linux'> linux
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/aop'> aop
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//categories/spring'> spring
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class='group'>
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95'> 性能测试
+                  <span class="badge">14</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/redis'> redis
+                  <span class="badge">13</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/loadrunner'> loadrunner
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/springboot'> springboot
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E7%BC%96%E7%A8%8B'> 编程
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/java'> java
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/linux'> linux
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/mongo'> mongo
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%88%86%E4%BA%AB'> 分享
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/centos'> centos
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/github'> github
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/jvm'> jvm
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/markdown'> markdown
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/nginx'> nginx
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%8D%9A%E5%AE%A2'> 博客
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB'> 软件分享
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/elasticsearch'> elasticsearch
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/hessian'> hessian
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/mat'> mat
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/mysql'> mysql
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/ngrinder'> ngrinder
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/nload'> nload
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/nmon'> nmon
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/premiere'> premiere
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/rpc'> rpc
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/theme'> theme
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E4%B9%B1%E7%A0%81'> 乱码
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6'> 办公软件
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'> 博客搭建
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E5%B7%A5%E5%85%B7'> 工具
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C'> 视频制作
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='http://kylin10.top//tags/%E9%80%A0%E6%95%B0%E6%8D%AE'> 造数据
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="http://kylin10.top//" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="http://kylin10.top//archive/" class=''>
+        归档
+      </a>
+    </li>
+    
+    <li>
+      <a href="http://kylin10.top//categories/" class=''>
+        分类
+      </a>
+    </li>
+    
+    <li>
+      <a href="http://kylin10.top//about/" class=''>
+        关于
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='http://kylin10.top//categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='http://kylin10.top//tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='http://kylin10.top/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+  
+
+
+
+
+<main id="single" role="main" class="main-panel">
+  <div class="page-content">
+    <div class="container container-ex">
+      <div class="inner">
+        <section class="post-wrapper">
+          
+          <div class="toc-panel">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#mat分析dump文件">MAT分析dump文件</a>
+<ul>
+<li><a href="#heap-dump">Heap Dump</a></li>
+<li><a href="#mat介绍及安装">MAT介绍及安装</a>
+<ul>
+<li><a href="#eclipse-memory-analyzer-mat">Eclipse Memory Analyzer(MAT)</a></li>
+</ul></li>
+<li><a href="#mat使用">MAT使用</a>
+<ul>
+<li><a href="#overview视图">Overview视图</a></li>
+<li><a href="#histogram直方图">Histogram直方图</a></li>
+<li><a href="#dominator-tree-支配树-视图">Dominator Tree（支配树）视图</a></li>
+<li><a href="#定位问题代码">定位问题代码</a>
+<ul>
+<li><a href="#方法一">方法一：</a></li>
+</ul></li>
+<li><a href="#方法二">方法二</a></li>
+</ul></li>
+<li><a href="#参考文章">参考文章</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+          <div class="post reveal ">
+            <div class="card">
+              <section class="breadcrumb-root">
+  <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+     
+
+    <a class="breadcrumb" href="http://kylin10.top/">
+      首页</a>
+      
+    
+      
+    
+        
+    
+      
+    <span class="breadcrumb">MAT分析dump文件</span>
+
+        
+    
+      
+  </div>
+</section>
+              
+              <div class="card-header postinfo">
+                <span class="card-title">MAT分析dump文件 </span>
+              </div>
+              <div class="card-header date">
+                
+                <div class="group">
+                  <i class="material-icons">book</i>
+                  <address>
+                    归档：
+                    <a href="http://kylin10.top//categories/jvm">JVM</a>&nbsp; 
+                  </address>
+                </div>
+                
+                <div class="group">
+                  <i class="material-icons">flag</i>
+                  <time>创建：2018年11月22日
+                  </time>
+                </div>
+                
+                
+
+              </div>
+              
+              <div class="card-content">
+
+                <article class="article">
+                  
+
+<h1 id="mat分析dump文件">MAT分析dump文件</h1>
+
+<h2 id="heap-dump">Heap Dump</h2>
+
+<p>Heap Dump：堆转储文件，生成 Java™ 堆上所有活动对象（即，正在运行的 Java 应用程序正在使用的对象）的转储</p>
+
+<blockquote>
+<p>转储格式有两种，文本或经典堆转储格式和可移植堆转储 (PHD) 格式。文本或经典格式可由人类阅读，但是 PHD 格式是压缩的，无法由人类阅读。这两种格式都包含堆中所有对象实例的列表，包括每个对象的地址、类型或类名、大小以及对其他对象的引用。这些堆转储还包含有关生成该转储的 JVM 版本的信息。它们不包含除类名和引用的值（地址）外的任何对象内容或数据。</p>
+</blockquote>
+
+<h2 id="mat介绍及安装">MAT介绍及安装</h2>
+
+<p>在使用jmap命令获取到jvm的dump信息之后，我们要进行分析，MAT是其中一个比较好用的工具。</p>
+
+<blockquote>
+<p>jmap -dump:format=b,file=/my.dump pid</p>
+</blockquote>
+
+<p>IBM还有一个分析工具，但是使用起来不是很友好，推荐使用MAT。</p>
+
+<h3 id="eclipse-memory-analyzer-mat">Eclipse Memory Analyzer(MAT)</h3>
+
+<p><a href="http://www.eclipse.org/mat/">Eclipse Memory Analyzer(MAT)</a>是Eclipse提供的一款用于Heap Dump文件的工具，它支持两种安装方式，一是Eclipse插件的方式，另外一个就是独立运行的方式，建议使用独立运行的方式。</p>
+
+<h2 id="mat使用">MAT使用</h2>
+
+<p>下载之后解压可以直接运行，打开软件之后：</p>
+
+<p>打开 File - Open Heap Dump&hellip; 菜单，然后选择生成的Heap DUmp文件，选择 &ldquo;Leak Suspects Report&rdquo;，然后点击 &ldquo;Finish&rdquo; 按钮。</p>
+
+<p>打开Dump文件可能要很久，文件越大时间越久。</p>
+
+<h3 id="overview视图">Overview视图</h3>
+
+<p>这是打开之后的主页面：Overview视图</p>
+
+<p><img src="https://i.loli.net/2018/11/22/5bf61cd6784a7.png" alt="" /></p>
+
+<p>Overview视图，即概要界面，显示了概要的信息，并展示了MAT常用的一些功能。</p>
+
+<ul>
+<li>Details 显示了一些统计信息，包括整个堆内存的大小、类（Class）的数量、对象（Object）的数量、类加载器（Class Loader)的数量。</li>
+</ul>
+
+<p>例如：Size: 870.9 MB， Classes: 16.6k ，Objects: 5m， Class Loader: 471</p>
+
+<p>Unreachable Objects Histogram 连接进去可以查看</p>
+
+<ul>
+<li><p>Biggest Objects by Retained Size 使用饼图的方式直观地显示了在JVM堆内存中最大的几个对象，当光标移到饼图上的时候会在左边Inspector和Attributes窗口中显示详细的信息。</p></li>
+
+<li><p>Actions 这里显示了几种常用到的操作，算是功能的快捷方式，包括 Histogram、Dominator Tree、Top Consumers、Duplicate Classes，具体的含义和用法见下面；</p>
+
+<ul>
+<li>Histogram：直方图，可以查看每个类的实例（即对象）的数量和大小</li>
+<li>Dominator Tree：支配树，列出Heap Dump中处于活跃状态中的最大的几个对象，默认按 retained size进行排序，因此很容易找到占用内存最多的对象。</li>
+</ul></li>
+
+<li><p>Reports 列出了常用的报告信息，包括 Leak Suspects和Top Components，具体的含义和内容见下；</p></li>
+
+<li><p>Step By Step 以向导的方式引导使用功能。</p></li>
+</ul>
+
+<p>英语不好，来个翻译：</p>
+
+<ul>
+<li>Histogram：英[ˈhɪstəgræm] 柱状图</li>
+<li>Dominator ：英[&lsquo;dɒmɪneɪtə] 支配者，支配力</li>
+<li>Duplicate ：英[ˈdju:plɪkeɪt] 重复; 复制; 复印</li>
+</ul>
+
+<h3 id="histogram直方图">Histogram直方图</h3>
+
+<p>先说两个概念：</p>
+
+<ul>
+<li><p>Shallow Heap ：对象自身占用的内存大小，不包括它引用的对象</p></li>
+
+<li><p>Retained Heap：Retained Size=当前对象大小+当前对象可直接或间接引用到的对象的大小总和。</p></li>
+</ul>
+
+<p>(间接引用的含义：A-&gt;B-&gt;C, C就是间接引用)
+  换句话说，Retained Size就是当前对象被GC后，从Heap上总共能释放掉的内存。</p>
+
+<p>Histogram直方图中显示的数据的默认单位是Bytes，可以在Window - Preferences 菜单中设置单位。</p>
+
+<p>通过Retained Heap排序，可以找到占用内存最多的几个类。</p>
+
+<p><img src="https://i.loli.net/2018/11/22/5bf64ed015cad.png" alt="" /></p>
+
+<p>并且可以对比两个dump文件来进行分析，如果存在内存溢出，时间久了溢出类的实例数量或者内存占比会越来越多，排名也越来越靠前。所以在分析的时候可以在不同的时间节点dump两份文件。</p>
+
+<h3 id="dominator-tree-支配树-视图">Dominator Tree（支配树）视图</h3>
+
+<p>在工具栏打开Dominator Tree（支配树）视图，在此视图中列出了每个对象（Object Instance）与其引用关系的树状结构，同时包含了占用内存的大小和百分比。</p>
+
+<p><img src="https://i.loli.net/2018/11/22/5bf6500877c6a.png" alt="" /></p>
+
+<p>通过Dominator Tree视图可以很容易的找出占用内存最多的几个对象（根据Retained Heap或Percentage排序），和Histogram类似，可以通过不同的方式进行分组显示。</p>
+
+<h3 id="定位问题代码">定位问题代码</h3>
+
+<h4 id="方法一">方法一：</h4>
+
+<p>Histogram视图和Dominator Tree视图的角度不同，前者是基于类的角度，后者是基于对象实例的角度，并且可以更方便的看出其引用关系。</p>
+
+<p>首先，在两个视图中找出疑似溢出的对象或者类（可以通过Retained Heap排序，并且可以在Class Name中输入正则表达式的关键词只显示指定的类名），然后右键选择Path To GC Roots（Histogram中没有此项）或Merge Shortest Paths to GC Roots，然后选择 *exclude all phantom/weak/soft etc. reference*：</p>
+
+<p><img src="C:/Users/11041385/AppData/Roaming/Typora/typora-user-images/1542869283385.png" alt="1542869283385" /></p>
+
+<p>GC Roots意为GC根节点，其含义见上面的 <a href="https://www.javatang.com/archives/2017/11/08/11582145.html#GC_RootsReference_Chain">GC Roots和Reference Chain</a> 部分，后面的 <em>exclude all phantom/weak/soft etc. reference</em> 意思是排除<a href="https://www.javatang.com/archives/2017/11/08/11582145.html#Reference">虚引用、弱引用和软引用</a>，即只剩下<a href="https://www.javatang.com/archives/2017/11/08/11582145.html#Reference">强引用</a>，因为除了强引用之外，其他的引用都可以被JVM GC掉，如果一个对象始终无法被GC，就说明有强引用存在，从而导致在GC的过程中一直得不到回收，最终就内存溢出了。</p>
+
+<p>通过结果就可以很方便的定位到具体的代码，然后分析是什么原因无法释放该对象，比如被缓存了或者没有使用单例模式等等。</p>
+
+<p><img src="https://i.loli.net/2018/11/22/5bf65176c5772.png" alt="" /></p>
+
+<h3 id="方法二">方法二</h3>
+
+<p>MAT工具自动会帮助我们进行分析，在OverView视图的Reports 部分，有一个Leak Suspects连接，直接进去</p>
+
+<p><img src="https://i.loli.net/2018/11/22/5bf653632103f.png" alt="" /></p>
+
+<p>进去之后就可以看到工具帮我们分析到的可疑点：</p>
+
+<p><img src="https://i.loli.net/2018/11/22/5bf653d39ec0c.png" alt="" /></p>
+
+<p>在详情里面看到具体的代码</p>
+
+<p><img src="https://i.loli.net/2018/11/22/5bf654334b413.png" alt="" /></p>
+
+<p>两种方式定位到的代码是相同的，都可以找到问题点。</p>
+
+<h2 id="参考文章">参考文章</h2>
+
+<ul>
+<li><a href="https://www.javatang.com/archives/2017/11/08/11582145.html">https://www.javatang.com/archives/2017/11/08/11582145.html</a></li>
+<li><a href="https://www.ibm.com/support/knowledgecenter/zh/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html">https://www.ibm.com/support/knowledgecenter/zh/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-ecl-ma/">https://www.ibm.com/developerworks/cn/opensource/os-cn-ecl-ma/</a></li>
+</ul>
+
+                </article>
+
+              </div>
+              
+              <div class="card-action card-action-links">
+                
+                <a class="btn btn-secondary" href="http://kylin10.top//tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95">性能测试</a> 
+                <a class="btn btn-secondary" href="http://kylin10.top//tags/jvm">JVM</a> 
+                <a class="btn btn-secondary" href="http://kylin10.top//tags/mat">MAT</a> 
+              </div>
+              
+              <div class="card-action">
+                  
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script>
+  window.VALINECONFIG = {
+    el: '#comment',
+    notify: false,
+    verify: false,
+    appId: '\x3c the appId \x3e',
+    appKey: '\x3c the appKey \x3e',
+    placeholder: '\x3c placeholder \x3e',
+    path: window.location.pathname,
+    avatar: 'retro'
+  }
+</script>  
+              </div>
+
+              
+              <div class="pagination-single">
+                 
+                
+                
+                <span class="pagination-item next">
+				<i class="material-icons">下一篇</i>
+                  <a href="http://kylin10.top/posts/springboot-%E4%BD%BF%E7%94%A8aop%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA_20181126/" rel="next">spring boot使用AOP进行日志输出</a>
+                </span> 
+              </div>
+              
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="wrapper">
+        <div class="group group-slink">
+          <h5>Kylin Blog</h5>
+          <p>Theme
+            <a href="https://github.com/stkevintan/canoe" target="_blank">canoe</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="group group-flink">
+          <h5>My Friends</h5>
+          <ul>
+            
+            <li>
+              <a href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+<script>
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.registerLanguage("graphql", function (e) { return { aliases: ["gql"], k: { keyword: "query mutation subscription|10 type interface union scalar fragment|10 enum on ...", literal: "true false null" }, c: [e.HCM, e.QSM, e.NM, { cN: "type", b: "[^\\w][A-Z][a-z]", e: "\\W", eE: !0 }, { cN: "literal", b: "[^\\w][A-Z][A-Z]", e: "\\W", eE: !0 }, { cN: "variable", b: "\\$", e: "\\W", eE: !0 }, { cN: "keyword", b: "[.]{2}", e: "\\." }, { cN: "meta", b: "@", e: "\\W", eE: !0 }], i: /([;<']|BEGIN)/ } });
+  hljs.initHighlightingOnLoad();
+  
+</script>
+
+
+<script type="text/javascript" src="http://kylin10.top//js/polyfill.js"></script>
+<script type="text/javascript" src="http://kylin10.top//js/index.js"></script>
+
+
+
+</body>
+
+</html>

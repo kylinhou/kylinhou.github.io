@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aop on Kylin Blog</title>
+    <link>http://kylin10.top/categories/aop/</link>
+    <description>Recent content in Aop on Kylin Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://kylin10.top/categories/aop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>spring boot使用AOP进行日志输出</title>
+      <link>http://kylin10.top/posts/springboot-%E4%BD%BF%E7%94%A8aop%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA_20181126/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/springboot-%E4%BD%BF%E7%94%A8aop%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA_20181126/</guid>
+      <description>spring boot使用AOP进行日志输出 Spring AOP介绍 Spring AOP专门介绍文章： 这里就不单独说AOP 了，只是做个简单的说明在spring boot中如何快速</description>
+    </item>
+    
+  </channel>
+</rss>

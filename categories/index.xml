@@ -2,102 +2,130 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Kylin Blog</title>
-    <link>https://kylinhou.github.io/categories/</link>
+    <link>http://kylin10.top/categories/</link>
     <description>Recent content in Categories on Kylin Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kylinhou.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kylin10.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Aop</title>
+      <link>http://kylin10.top/categories/aop/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/categories/aop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Elasticsearch</title>
-      <link>https://kylinhou.github.io/categories/elasticsearch/</link>
+      <link>http://kylin10.top/categories/elasticsearch/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/elasticsearch/</guid>
+      <guid>http://kylin10.top/categories/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>http://kylin10.top/categories/java/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jvm</title>
-      <link>https://kylinhou.github.io/categories/jvm/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      <link>http://kylin10.top/categories/jvm/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/jvm/</guid>
+      <guid>http://kylin10.top/categories/jvm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://kylinhou.github.io/categories/linux/</link>
+      <link>http://kylin10.top/categories/linux/</link>
       <pubDate>Tue, 04 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/linux/</guid>
+      <guid>http://kylin10.top/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mongo</title>
-      <link>https://kylinhou.github.io/categories/mongo/</link>
+      <link>http://kylin10.top/categories/mongo/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/mongo/</guid>
+      <guid>http://kylin10.top/categories/mongo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mysql</title>
-      <link>https://kylinhou.github.io/categories/mysql/</link>
+      <link>http://kylin10.top/categories/mysql/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/mysql/</guid>
+      <guid>http://kylin10.top/categories/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Redis</title>
-      <link>https://kylinhou.github.io/categories/redis/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      <link>http://kylin10.top/categories/redis/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/redis/</guid>
+      <guid>http://kylin10.top/categories/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring</title>
+      <link>http://kylin10.top/categories/spring/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/categories/spring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Springboot</title>
-      <link>https://kylinhou.github.io/categories/springboot/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      <link>http://kylin10.top/categories/springboot/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/springboot/</guid>
+      <guid>http://kylin10.top/categories/springboot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>分享</title>
-      <link>https://kylinhou.github.io/categories/%E5%88%86%E4%BA%AB/</link>
+      <link>http://kylin10.top/categories/%E5%88%86%E4%BA%AB/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/%E5%88%86%E4%BA%AB/</guid>
+      <guid>http://kylin10.top/categories/%E5%88%86%E4%BA%AB/</guid>
       <description></description>
     </item>
     
     <item>
       <title>博客</title>
-      <link>https://kylinhou.github.io/categories/%E5%8D%9A%E5%AE%A2/</link>
+      <link>http://kylin10.top/categories/%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sat, 23 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>http://kylin10.top/categories/%E5%8D%9A%E5%AE%A2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>性能测试</title>
-      <link>https://kylinhou.github.io/categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link>
+      <link>http://kylin10.top/categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid>
+      <guid>http://kylin10.top/categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid>
       <description></description>
     </item>
     

@@ -2,77 +2,131 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Redis on Kylin Blog</title>
-    <link>https://kylinhou.github.io/tags/redis/</link>
+    <link>http://kylin10.top/tags/redis/</link>
     <description>Recent content in Redis on Kylin Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
-    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kylinhou.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kylin10.top/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>spring boot使用AOP进行日志输出</title>
+      <link>http://kylin10.top/posts/springboot-%E4%BD%BF%E7%94%A8aop%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA_20181126/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/springboot-%E4%BD%BF%E7%94%A8aop%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA_20181126/</guid>
+      <description>spring boot使用AOP进行日志输出 Spring AOP介绍 Spring AOP专门介绍文章： 这里就不单独说AOP 了，只是做个简单的说明在spring boot中如何快速</description>
+    </item>
+    
+    <item>
+      <title>redis危险命令</title>
+      <link>http://kylin10.top/posts/redis-redis%E5%8D%B1%E9%99%A9%E5%91%BD%E4%BB%A420181009/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/redis-redis%E5%8D%B1%E9%99%A9%E5%91%BD%E4%BB%A420181009/</guid>
+      <description>redis危险命令 keys 虽然keys的模糊匹配功能使用非常方便也很强大，在小数据量情况下使用没什么问题，数据量大会导致 Redis 锁住及 CPU 飙升，在生产环境</description>
+    </item>
+    
+    <item>
       <title>redis3.0.7集群搭建指导文档</title>
-      <link>https://kylinhou.github.io/posts/redis-%E9%9B%86%E7%BE%A4_20180903/</link>
+      <link>http://kylin10.top/posts/redis-%E9%9B%86%E7%BE%A4_20180903/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/redis-%E9%9B%86%E7%BE%A4_20180903/</guid>
+      <guid>http://kylin10.top/posts/redis-%E9%9B%86%E7%BE%A4_20180903/</guid>
       <description>redis3.0.7集群搭建指导文档 kylin 说明 现在很多项目都用到redis集群，目前普遍使用redis cluster集群方式，本文以3主3从的方</description>
     </item>
     
     <item>
       <title>redis使用pipeline批量造数据</title>
-      <link>https://kylinhou.github.io/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/</link>
+      <link>http://kylin10.top/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/</guid>
+      <guid>http://kylin10.top/posts/redis-pipeline%E6%89%B9%E9%87%8F%E9%80%A0%E6%95%B0%E6%8D%AE_20180903/</guid>
       <description>redis使用pipeline批量造数据 Redis客户端与redis之间使用TCP协议进行连接，一个客户端可以通过一个socket连接发起多</description>
     </item>
     
     <item>
       <title>redis常用命令</title>
-      <link>https://kylinhou.github.io/posts/redis-redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4_20180903/</link>
+      <link>http://kylin10.top/posts/redis-redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4_20180903/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/redis-redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4_20180903/</guid>
+      <guid>http://kylin10.top/posts/redis-redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4_20180903/</guid>
       <description>查看redis的状态，TPS 控制在6w之内 redis-cli -P 1499 &amp;ndash;stat redis-cli -h 172.25.1.20 -p 7000 &amp;ndash;stat ./redis-cli -h 192.168.2.237 -p 6379 &amp;ndash;stat 查看内存 # Memory used_memory:13490096 //数据占用了多少内存（字节） used_memory_human:12.87M //数据占用了多少内</description>
     </item>
     
     <item>
       <title>redis添加密码</title>
-      <link>https://kylinhou.github.io/posts/redis-%E6%B7%BB%E5%8A%A0%E5%AF%86%E7%A0%81_20180903/</link>
+      <link>http://kylin10.top/posts/redis-%E6%B7%BB%E5%8A%A0%E5%AF%86%E7%A0%81_20180903/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/redis-%E6%B7%BB%E5%8A%A0%E5%AF%86%E7%A0%81_20180903/</guid>
+      <guid>http://kylin10.top/posts/redis-%E6%B7%BB%E5%8A%A0%E5%AF%86%E7%A0%81_20180903/</guid>
       <description>redis添加密码 之前使用redis一直是无密码直接连接，目前要增加密码认证。 单节点 基于配置文件的密码配置： 打开 redis.conf 设置： requirepass myredispass 取消： #requirepass myredispass 注： 只</description>
     </item>
     
     <item>
       <title>redis的安装与配置</title>
-      <link>https://kylinhou.github.io/posts/redis-redis%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE_20180903/</link>
+      <link>http://kylin10.top/posts/redis-redis%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE_20180903/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/redis-redis%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE_20180903/</guid>
+      <guid>http://kylin10.top/posts/redis-redis%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE_20180903/</guid>
       <description>redis安装与配置 redis3.0.7安装 1：上传安装文件到服务器 解压： tar -zxvf redis-3.0.7.tar.gz 进行编译安装 cd /home/soft/redis3.0.7 make make install 如果出现如下问题： 先执行一下 make distclean 然后m</description>
     </item>
     
     <item>
-      <title>监控redis</title>
-      <link>https://kylinhou.github.io/posts/redis-%E7%9B%91%E6%8E%A7redis_20180903/</link>
+      <title>redis的持久化</title>
+      <link>http://kylin10.top/posts/redis-redis%E7%9A%84%E6%8C%81%E4%B9%85%E5%8C%96_20181121/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/redis-%E7%9B%91%E6%8E%A7redis_20180903/</guid>
+      <guid>http://kylin10.top/posts/redis-redis%E7%9A%84%E6%8C%81%E4%B9%85%E5%8C%96_20181121/</guid>
+      <description>redis的持久化 redis的持久化方式 Redis是一种高级key-value数据库。它跟memcached类似，不过数据可以持久化，而且支</description>
+    </item>
+    
+    <item>
+      <title>监控redis</title>
+      <link>http://kylin10.top/posts/redis-%E7%9B%91%E6%8E%A7redis_20180903/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/redis-%E7%9B%91%E6%8E%A7redis_20180903/</guid>
       <description>监控redis 监控执行的redis指令 redis-cli monitor | grep &amp;lsquo;[0&amp;rsquo; | grep -v &amp;lsquo;PING&amp;rsquo; | grep -v &amp;lsquo;SELECT&amp;rsquo; redis-cli -h 192.168.2.231 -p 1307 monitor | grep &amp;lsquo;[0&amp;rsquo; | grep -v &amp;lsquo;PING&amp;rsquo; | grep -v &amp;lsquo;SELECT&amp;rsquo; -v ：过滤掉某些词</description>
     </item>
     
     <item>
-      <title>spring boot整合redis</title>
-      <link>https://kylinhou.github.io/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/</link>
+      <title>Spring Data Redis使用详细介绍</title>
+      <link>http://kylin10.top/posts/springboot-redis%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E_20181116/</link>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kylinhou.github.io/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/</guid>
+      <guid>http://kylin10.top/posts/springboot-redis%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E_20181116/</guid>
+      <description>Spring Data Redis使用详细介绍 redis redis是一种特殊类型的数据库，称之为key-value存储。说到key-value存储，可能会想到Map。不</description>
+    </item>
+    
+    <item>
+      <title>spring boot整合redis</title>
+      <link>http://kylin10.top/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/springboot-redis%E6%95%B4%E5%90%88_20180903/</guid>
       <description>spring boot整合redis 添加redis引用 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-data-redis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.5.6.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 配置文件配置redis源 ############################################################## # REDIS (RedisProperties) # Redis数据库索引（默认为0） spring.redis.database=0 # Redis服务器地</description>
+    </item>
+    
+    <item>
+      <title>spring boot整合redis</title>
+      <link>http://kylin10.top/posts/springboot-redis%E6%95%B4%E5%90%88_20181116/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/springboot-redis%E6%95%B4%E5%90%88_20181116/</guid>
+      <description>spring boot整合redis 这篇文章介绍如何简单快速的使用redis。可以概括为下面几个步骤 添加maven引用：spring-boot-star</description>
+    </item>
+    
+    <item>
+      <title>spring 自动装配</title>
+      <link>http://kylin10.top/posts/spring-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D_20181106/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylin10.top/posts/spring-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D_20181106/</guid>
+      <description></description>
     </item>
     
   </channel>
